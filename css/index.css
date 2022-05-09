@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;900&family=Quicksand:wght@400;500;700&display=swap');
 :root{
     --primary: rgba(19, 125, 183,1);
     --back-ground-main: rgba(99, 208, 255, 0.05);
@@ -13,7 +14,6 @@
     --font-size-banner: 75px
 
 }
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -85,6 +85,7 @@ body{
     padding-right: 0;
 }
 /*content*/
+/* banner*/
 .content{
     padding-top: 80px;
 }
@@ -92,6 +93,7 @@ body{
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin-bottom: 40px;
 }
 .banner::before{
     content: '';
@@ -122,7 +124,7 @@ body{
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 150px 0;
+    padding: 150px 0 200px 0;
 }
 .banner__text{
     width: 80%;
@@ -160,14 +162,47 @@ body{
 }
 .banner__images{
     position: absolute;
-    top: 10%;
+    top: 5%;
     right: 0;
-    width: 50%;
+    width: 55%;
 }
 .banner__images .img__default{
-    padding-bottom: 91%;
+    padding-bottom: 90.5%;
+}
+.banner__partner{
+    padding: 50px 0;
+    position: relative;
+}
+.banner__partner::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(78, 146, 249, 0), rgba(195, 129, 219, 0.4), rgba(78, 146, 249, 0));
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+}
+.banner__partner::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(78, 146, 249, 0), rgba(195, 129, 219, 0.4), rgba(78, 146, 249, 0));
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
 }
 .banner__partner .img__default{
     padding-bottom: 20%;
     object-fit: contain;
+}
+/*service*/
+.service{
+    padding: 30px 0 40px 0;
+}
+.title__default h3{
+    font-weight: 700;
 }
