@@ -1,0 +1,173 @@
+:root{
+    --primary: rgba(19, 125, 183,1);
+    --back-ground-main: rgba(99, 208, 255, 0.05);
+    --blue-grey-900: rgba(36, 42, 51, 1);
+    --blue-grey-600: rgba(90, 105, 128, 1);
+    --blue-grey-500: rgba(108, 126, 153,1);
+    --blue-grey-400: rgb(126, 146, 178,1);
+    --blue-grey-300: rgba(144, 168, 204,1);
+    --white: rgba(255, 255, 255,1);
+    --black: rgba(36, 42, 51, 1);
+    --theme-primary: rgba(78, 146, 249,1);
+    --font-size-text: 16px;
+    --font-size-banner: 75px
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    background-color: var(--back-ground-main);
+}
+.img__default{
+    position: relative;
+    display: block;
+    padding-bottom: 36%;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    margin-bottom: 0px;
+    transition: all .35s;
+}
+.img__default img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+    padding: 0;
+}
+/*header*/
+.header{
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;   
+    z-index: 1000;
+}
+.navbar {
+    padding: 0;
+}
+.logo{
+    width: 157.84px;
+    padding: 15px 0;
+}
+.logo .img__default{
+    padding-bottom: 31.68%;
+}
+.navbar-collapse{
+    display: flex;
+    justify-content: end;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
+    color: var(--primary);
+    font-size: var(--font-size-text);
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 10px 30px;
+    color: var(--black);
+    font-size: var(--font-size-text);
+    line-height: 20px;
+}
+.navbar-expand-lg .navbar-nav .nav-link:first-child{
+    padding-left: 0;
+}
+.navbar-expand-lg .navbar-nav .nav-link:last-child{
+    padding-right: 0;
+}
+/*content*/
+.content{
+    padding-top: 80px;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.banner::before{
+    content: '';
+    position: absolute;
+    width: 1051px;
+    height: 1051px;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 221, 148, 0.11);
+    filter: blur(60px);
+    border-radius: 100%;
+}
+.banner::after{
+    content: '';
+    position: absolute;
+    width: 573px;
+    height: 573px;
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+    background: linear-gradient(165.74deg, rgba(255, 186, 39, 0.17) 10.13%, rgba(255, 222, 152, 0.17) 86.62%);
+    filter: blur(60px);
+    border-radius: 112px;
+}
+.banner__content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 150px 0;
+}
+.banner__text{
+    width: 80%;
+}
+.banner__text h1{   
+    background: linear-gradient( 90deg,rgba(19, 125, 183, 1),rgba(79, 224, 182, 1));
+    font-size: var(--font-size-banner);
+    font-weight: 900;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 100px;
+    margin-bottom: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+.banner__text p{
+    width: 50%;
+    font-size: var(--font-size-text);
+    font-weight: 400;
+    color: var(--blue-grey-600);
+    line-height: 22px;
+    margin-bottom: 50px;
+}
+.banner__text a{
+    padding: 7px 22px;
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 2px 2px 10px rgba(195, 129, 219, .5), 5px 5px 15px rgba(78, 146, 249, .5);
+    font-weight: 400;
+    font-size: var(--font-size-text);
+    line-height: 24px;
+    font-style: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+.banner__images{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 50%;
+}
+.banner__images .img__default{
+    padding-bottom: 91%;
+}
+.banner__partner .img__default{
+    padding-bottom: 20%;
+    object-fit: contain;
+}
