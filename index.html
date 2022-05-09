@@ -74,13 +74,12 @@
               id="navbarNavAltMarkup"
             >
               <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Trang chủ</a
-                >
-                <a class="nav-link" href="#">Về chúng tôi</a>
-                <a class="nav-link" href="#">Dịch vụ</a>
-                <a class="nav-link" href="#">Dự án</a>
-                <a class="nav-link" href="#">Liên hệ</a>
+                <a class="nav-link active" aria-current="page" href="#banner"
+                  >Trang chủ</a>
+                <a class="nav-link" href="#service">Dịch vụ</a>
+                <a class="nav-link" href="#project">Dự án</a>
+                <a class="nav-link" href="#project">Đội ngũ</a>
+                <a class="nav-link" href="#contact">Liên hệ</a>
               </div>
             </div>
           </div>
@@ -88,7 +87,7 @@
       </div>
     </header>
     <main class="content">
-      <section class="banner">
+        <section class="banner" id="banner">
         <div class="container">
           <div class="banner__content">
             <div class="banner__text">
@@ -149,8 +148,8 @@
             </div>
           </div>
         </div>
-      </section>
-        <section class="service">
+        </section>
+        <section class="service" id="service">
             <div class="title__default">
                 <h3>
                     Dịch vụ
@@ -160,26 +159,44 @@
                 </p>
             </div>
             <div class="service__content">
-                
+                <div class="owl-carousel owl-theme" id="service">
+                    <div class="item">
+                        <div class="service__item">
+                            <div class="service__img d-flex justify-content-center">
+                                <div class="img__default">
+                                    <img src="images/service.png" alt="dịch vụ">
+                                </div>
+                            </div>
+                            <div class="service__title">
+                                <h3>Thiết kế Website</h3>
+                                <p>Thiết kế, lập trình website cho doanh nghiệp, website bán hàng.</p>
+                                <a href="detail-service.html">Xem thêm &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <section class="project" id="project"></section>
+        <section class="team" id="team"></section>
+        <section class="contact" id="contact"></section>
     </main>
     <footer class="footer"></footer>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
-    <!-- <script src="js/owl.carousel.min.js"></script> -->
+    <script src="js/owl.carousel.min.js"></script>
     <script>
       $(document).ready(function () {
-        var topMenu = $(".navbar"),
-          topMenuHeight = topMenu.outerHeight() + 15,
+        var topMenu = $(".navbar-nav"),
+          topMenuHeight = topMenu.outerHeight() + 60,
           menuItems = topMenu.find("a"),
           scrollItems = menuItems.map(function () {
             var item = $($(this).attr("href"));
             if (item.length) {
               return item;
             }
-          });
+          })
         $("a").on("click", function (event) {
           if (this.hash !== "") {
             event.preventDefault();
@@ -194,7 +211,7 @@
               }
             );
           }
-        });
+        })
         // Bind to scroll
         $(window).scroll(function () {
           // //back to top
@@ -226,7 +243,23 @@
             .removeClass("active")
             .filter("[href='#" + id + "']")
             .addClass("active");
-        });
+        })
+        $('.owl-carousel').owlCarousel({
+            stagePadding: 300,
+            loop:true,
+            margin:130,
+            nav:false,
+            dot: false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                1520:{
+                    margin: 100,
+                    items:3
+                },
+            }
+        })
       });
     </script>
   </body>
