@@ -11,7 +11,8 @@
     --black: rgba(36, 42, 51, 1);
     --theme-primary: rgba(78, 146, 249,1);
     --font-size-text: 16px;
-    --font-size-banner: 75px
+    --font-size-banner: 75px;
+    --font-size-title: 40px;
 
 }
 *{
@@ -202,7 +203,28 @@ body{
 /*service*/
 .service{
     padding: 30px 0 40px 0;
+    background-color: rgba(19, 125, 183, 0.07);
+}
+.title__default{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .title__default h3{
     font-weight: 700;
+    font-size: var(--font-size-title);
+    color: var(--blue-grey-900);
+    line-height: 48px;
+    font-family: 'Nunito' sans-serif;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.title__default p{
+    font-weight: 400;
+    color: var(--blue-grey-600);
+    line-height: 22px;
+    font-size: var(--font-size-text);
+    width: 30%;
+    margin-bottom: 0;
+    text-align: center;
 }
