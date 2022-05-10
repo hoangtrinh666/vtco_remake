@@ -7,6 +7,7 @@
     .container{
         max-width: 1140px;
     }
+
 }
 @media (max-width: 969px){
     .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
