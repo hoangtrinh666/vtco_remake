@@ -79,7 +79,7 @@
                 >
                 <a class="nav-link" href="#service">Dịch vụ</a>
                 <a class="nav-link" href="#project">Dự án</a>
-                <a class="nav-link" href="#project">Đội ngũ</a>
+                <a class="nav-link" href="#team">Đội ngũ</a>
                 <a class="nav-link" href="#contact">Liên hệ</a>
               </div>
             </div>
@@ -506,7 +506,20 @@
           </div>
         </div>
       </section>
-      <section class="contact" id="contact"></section>
+      <section class="contact" id="contact">
+        <div class="title__default">
+          <h3>Liên hệ</h3>
+        </div>
+        <div class="contact__content">
+          <div class="container">
+            <div class="row">
+              <div class="col-0 col-md-4"></div>
+              <div class="col-12 col-md-8"></div>
+              <div class="col-0 col-md-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer"></footer>
     <script src="js/popper.min.js"></script>
@@ -607,14 +620,13 @@
         });
 
         $(document).on("click", ".owl-item>.click__item", function () {
-          // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
           var $speed = 300; // in ms
           $owl.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
         });
         var $owl2 = $("#team__slide");
 
         $owl2.children().each(function (index) {
-          $(this).attr("data-position", index); // NB: .attr() instead of .data()
+          $(this).attr("data-position", index);
         });
 
         $owl2.owlCarousel({
@@ -647,7 +659,6 @@
         });
 
         $(document).on("click", ".owl-item>div", function () {
-          // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
           var $speed = 300; // in ms
           $owl2.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
         });

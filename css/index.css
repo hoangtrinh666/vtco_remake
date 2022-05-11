@@ -363,7 +363,7 @@ body {
   padding: 30px 0;
 }
 /*Project*/
-.project {
+.project, .contact {
   padding-top: 70px;
   padding-bottom: 85px;
   position: relative;
