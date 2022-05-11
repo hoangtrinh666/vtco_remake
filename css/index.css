@@ -102,7 +102,6 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  overflow: hidden;
   padding-bottom: 40px;
 }
 .banner::before {
@@ -258,7 +257,7 @@ body {
   font-size: var(--font-size-title);
   color: var(--blue-grey-900);
   line-height: 48px;
-  font-family: "Nunito" sans-serif;
+  font-family: 'Nunito', sans-serif;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -286,15 +285,19 @@ body {
 .service__title {
   padding: 0 32px 32px;
 }
-.service__title h3 {
+.service__title a:hover h3{
+  color: var(--theme-primary);
+  text-decoration: none;
+}
+.service__title a h3 {
   font-size: var(--font-size-title-2);
   font-weight: 700;
   font-family: "Nunito", sans-serif;
   line-height: 27px;
   margin-bottom: 20px;
+  color: var(--blue-grey-600);
 }
 .service__title p {
-  min-height: 95px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -309,6 +312,9 @@ body {
   font-size: 16px;
   font-weight: 700;
   color: var(--theme-primary);
+}
+.service__title a:hover{
+  color: var(--primary);
 }
 /*slide-center-active*/
 
@@ -366,21 +372,17 @@ body {
   position: absolute;
   width: 86.65px;
   height: 29px;
-  left: 5%;
+  left: 10%;
   top: 20%;
-
-/* Theme/Info */
 }
 .project::after{
   content: url(../images/vector2.png);
   position: absolute;
   width: 86.65px;
   height: 29px;
-  right: 5%;
+  right: 10%;
   top: 50%;
   transform: translateY(-50%);
-
-/* Theme/Info */
 }
 .list__project::before {
   content: "";
@@ -397,6 +399,7 @@ body {
     rgba(255, 176, 7, 0) 100%
   );
   filter: blur(100px);
+  z-index: 1;
 }
 .list__project::after {
   content: "";
@@ -412,6 +415,7 @@ body {
     rgba(7, 77, 255, 0) 100%
   );
   filter: blur(100px);
+  z-index: 1;
 }
 .our__projects {
   padding-top: 78px;
@@ -426,18 +430,61 @@ body {
   border-radius: 27px;
   border: 2px solid #ffffff;
   padding: 24px 24px 0;
+  z-index: 2;
 }
 
-.list__product .heigh .img__default {
+.heigh .img__default {
   padding-bottom: 120% !important;
 }
-.list__product .product__item {
+.item__product{
+  position: relative;
+  z-index: 6;
+}
+.item__product .product__item {
   border-radius: 10.55px;
   margin-bottom: 24px;
   overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all .5s ease;
 }
-.list__product .product__item .img__default {
+.item__product:hover .product__item{
+  transform: rotateY(180deg);
+}
+.item__product:hover .product__item .img__default{
+  z-index: -1;
+}
+.product__item .img__default {
+  backface-visibility: hidden;
   padding-bottom: 55%;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  transition: all .2s ease;
+  border-radius: 10.55px;
+}
+.product__item .backgroud__behind{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    155.8deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  border-radius: 10.55px;
+  transform:  rotateY(180deg);
+  padding: 32px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: all .2s ease;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+.item__product:hover .product__item.backgroud__behind{
+  z-index: 4;
 }
 .see-more{
   margin-top: 52.71px;
@@ -450,4 +497,50 @@ body {
   text-decoration: none;
   font-size: var(--font-size-text);
   font-weight: 700;
+  content: var(--theme-primary);
+}
+.see-more a:hover{
+  color: var(--primary);
+}
+.backgroud__behind a h3{
+  font-size: var(--font-size-title-2);
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  line-height: 27px;
+  margin-bottom: 10px;
+  color: var(--blue-grey-900);
+}
+.backgroud__behind a:hover h3{
+  color: var(--primary);
+}
+.backgroud__behind p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: var(--font-size-text);
+  color: var(--blue-grey-600);
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.backgroud__behind a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--theme-primary);  
+}
+.backgroud__behind a:hover{
+  color: var(--primary);
+}
+.heigh .backgroud__behind p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  font-size: var(--font-size-text);
+  color: var(--blue-grey-600);
+  font-weight: 400;
+  margin-bottom: 5px;
 }
