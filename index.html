@@ -159,8 +159,8 @@
           </p>
         </div>
         <div class="service__content">
-          <div class="owl-carousel">
-            <div class="item">
+          <div class="owl-carousel" id="service__slide">
+            <div class="item click__item">
               <div class="service__item">
                 <div class="service__img d-flex justify-content-center">
                   <div class="img__default">
@@ -177,7 +177,21 @@
                 </div>
               </div>
             </div>
-            <div class="item">
+            <div class="item click__item">
+              <div class="service__item">
+                <div class="service__img d-flex justify-content-center">
+                  <div class="img__default">
+                    <img src="images/service.png" alt="dịch vụ" />
+                  </div>
+                </div>
+                <div class="service__title">
+                  <a href="#"><h3>Lập trình phần mềm</h3></a>
+                  <p>Lập trình phần mềm, ứng dụng theo yêu cầu.</p>
+                  <a href="detail-service.html">Xem thêm &rarr;</a>
+                </div>
+              </div>
+            </div>
+            <div class="item click__item">
               <div class="service__item">
                 <div class="service__img d-flex justify-content-center">
                   <div class="img__default">
@@ -194,7 +208,7 @@
                 </div>
               </div>
             </div>
-            <div class="item">
+            <div class="item click__item">
               <div class="service__item">
                 <div class="service__img d-flex justify-content-center">
                   <div class="img__default">
@@ -202,16 +216,13 @@
                   </div>
                 </div>
                 <div class="service__title">
-                  <a href="#"><h3>Thiết kế Website</h3></a>
-                  <p>
-                    Thiết kế, lập trình website cho doanh nghiệp, website bán
-                    hàng.
-                  </p>
+                  <a href="#"><h3>IT doanh nghiệp</h3></a>
+                  <p>Dịch vụ IT toàn diện cho doanh nghiệp.</p>
                   <a href="detail-service.html">Xem thêm &rarr;</a>
                 </div>
               </div>
             </div>
-            <div class="item">
+            <div class="item click__item">
               <div class="service__item">
                 <div class="service__img d-flex justify-content-center">
                   <div class="img__default">
@@ -219,16 +230,13 @@
                   </div>
                 </div>
                 <div class="service__title">
-                  <a href="#"><h3>Thiết kế Website</h3></a>
-                  <p>
-                    Thiết kế, lập trình website cho doanh nghiệp, website bán
-                    hàng.
-                  </p>
+                  <a href="#"><h3>Face Detection</h3></a>
+                  <p>Phát triển ứng dụng nhận diện khuôn mặt.</p>
                   <a href="detail-service.html">Xem thêm &rarr;</a>
                 </div>
               </div>
             </div>
-            <div class="item">
+            <div class="item click__item">
               <div class="service__item">
                 <div class="service__img d-flex justify-content-center">
                   <div class="img__default">
@@ -236,16 +244,13 @@
                   </div>
                 </div>
                 <div class="service__title">
-                  <a href="#"><h3>Thiết kế Website</h3></a>
-                  <p>
-                    Thiết kế, lập trình website cho doanh nghiệp, website bán
-                    hàng.
-                  </p>
+                  <a href="#"><h3>Ứng dụng IOT</h3></a>
+                  <p>Phát triển & ứng dụng IOT.</p>
                   <a href="detail-service.html">Xem thêm &rarr;</a>
                 </div>
               </div>
             </div>
-            <div class="item">
+            <div class="item click__item">
               <div class="service__item">
                 <div class="service__img d-flex justify-content-center">
                   <div class="img__default">
@@ -253,11 +258,8 @@
                   </div>
                 </div>
                 <div class="service__title">
-                  <a href="#"><h3>Thiết kế Website</h3></a>
-                  <p>
-                    Thiết kế, lập trình website cho doanh nghiệp, website bán
-                    hàng.
-                  </p>
+                  <a href="#"><h3>Tool Xây dựng</h3></a>
+                  <p>Phát triển Tools chuyên ngành xây dựng.</p>
                   <a href="detail-service.html">Xem thêm &rarr;</a>
                 </div>
               </div>
@@ -269,7 +271,8 @@
         <div class="title__default">
           <h3>Dự án</h3>
           <p>
-            Dự án là một hoạt động đơn lẻ hoặc theo nhóm, kết hợp nghiên cứu và thiết kế với nỗ lực cao nhất. Đây là một số dự án của chúng tôi.
+            Dự án là một hoạt động đơn lẻ hoặc theo nhóm, kết hợp nghiên cứu và
+            thiết kế với nỗ lực cao nhất. Đây là một số dự án của chúng tôi.
           </p>
         </div>
         <div class="our__projects">
@@ -281,15 +284,22 @@
                     <div class="item__product">
                       <div class="product__item">
                         <a href="#" class="img__default">
-                          <img src="images/pro4.png" alt="product">
+                          <img src="images/pro4.png" alt="product" />
                         </a>
                         <div class="backgroud__behind">
-                          <a href="#"> <h3>Thi công hệ thống mạng công ty Tân Hùng Hải</h3></a>
-                          <p>Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa chất dùng trong các ngành công
-                            nghiệp, nông nghiệp, thực phẩm, nuôi trồng và chế
-                            biến thủy sản lâu năm chuyên nghiệp, uy tín với chất
-                            lượng hàng đầu, là đối tác đáng tin cậy của nhiều
-                            khách hàng và doanh nghiệp trên toàn quốc.</p>
+                          <a href="#">
+                            <h3>
+                              Thi công hệ thống mạng công ty Tân Hùng Hải
+                            </h3></a
+                          >
+                          <p>
+                            Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa
+                            chất dùng trong các ngành công nghiệp, nông nghiệp,
+                            thực phẩm, nuôi trồng và chế biến thủy sản lâu năm
+                            chuyên nghiệp, uy tín với chất lượng hàng đầu, là
+                            đối tác đáng tin cậy của nhiều khách hàng và doanh
+                            nghiệp trên toàn quốc.
+                          </p>
                           <a href="#">Chi tiết &rarr;</a>
                         </div>
                       </div>
@@ -297,15 +307,22 @@
                     <div class="item__product">
                       <div class="product__item heigh">
                         <a href="#" class="img__default">
-                          <img src="images/pro1.png" alt="product">
+                          <img src="images/pro1.png" alt="product" />
                         </a>
                         <div class="backgroud__behind">
-                          <a href="#"> <h3>Thi công hệ thống mạng công ty Tân Hùng Hải</h3></a>
-                          <p>Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa chất dùng trong các ngành công
-                            nghiệp, nông nghiệp, thực phẩm, nuôi trồng và chế
-                            biến thủy sản lâu năm chuyên nghiệp, uy tín với chất
-                            lượng hàng đầu, là đối tác đáng tin cậy của nhiều
-                            khách hàng và doanh nghiệp trên toàn quốc.</p>
+                          <a href="#">
+                            <h3>
+                              Thi công hệ thống mạng công ty Tân Hùng Hải
+                            </h3></a
+                          >
+                          <p>
+                            Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa
+                            chất dùng trong các ngành công nghiệp, nông nghiệp,
+                            thực phẩm, nuôi trồng và chế biến thủy sản lâu năm
+                            chuyên nghiệp, uy tín với chất lượng hàng đầu, là
+                            đối tác đáng tin cậy của nhiều khách hàng và doanh
+                            nghiệp trên toàn quốc.
+                          </p>
                           <a href="#">Chi tiết &rarr;</a>
                         </div>
                       </div>
@@ -317,15 +334,22 @@
                     <div class="item__product">
                       <div class="product__item">
                         <a href="#" class="img__default">
-                          <img src="images/pro2.png" alt="product">
+                          <img src="images/pro2.png" alt="product" />
                         </a>
                         <div class="backgroud__behind">
-                          <a href="#"> <h3>Thi công hệ thống mạng công ty Tân Hùng Hải</h3></a>
-                          <p>Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa chất dùng trong các ngành công
-                            nghiệp, nông nghiệp, thực phẩm, nuôi trồng và chế
-                            biến thủy sản lâu năm chuyên nghiệp, uy tín với chất
-                            lượng hàng đầu, là đối tác đáng tin cậy của nhiều
-                            khách hàng và doanh nghiệp trên toàn quốc.</p>
+                          <a href="#">
+                            <h3>
+                              Thi công hệ thống mạng công ty Tân Hùng Hải
+                            </h3></a
+                          >
+                          <p>
+                            Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa
+                            chất dùng trong các ngành công nghiệp, nông nghiệp,
+                            thực phẩm, nuôi trồng và chế biến thủy sản lâu năm
+                            chuyên nghiệp, uy tín với chất lượng hàng đầu, là
+                            đối tác đáng tin cậy của nhiều khách hàng và doanh
+                            nghiệp trên toàn quốc.
+                          </p>
                           <a href="#">Chi tiết &rarr;</a>
                         </div>
                       </div>
@@ -333,15 +357,22 @@
                     <div class="item__product">
                       <div class="product__item heigh">
                         <a href="#" class="img__default">
-                          <img src="images/pro3.png" alt="product">
+                          <img src="images/pro3.png" alt="product" />
                         </a>
                         <div class="backgroud__behind">
-                          <a href="#"> <h3>Thi công hệ thống mạng công ty Tân Hùng Hải</h3></a>
-                          <p>Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa chất dùng trong các ngành công
-                            nghiệp, nông nghiệp, thực phẩm, nuôi trồng và chế
-                            biến thủy sản lâu năm chuyên nghiệp, uy tín với chất
-                            lượng hàng đầu, là đối tác đáng tin cậy của nhiều
-                            khách hàng và doanh nghiệp trên toàn quốc.</p>
+                          <a href="#">
+                            <h3>
+                              Thi công hệ thống mạng công ty Tân Hùng Hải
+                            </h3></a
+                          >
+                          <p>
+                            Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa
+                            chất dùng trong các ngành công nghiệp, nông nghiệp,
+                            thực phẩm, nuôi trồng và chế biến thủy sản lâu năm
+                            chuyên nghiệp, uy tín với chất lượng hàng đầu, là
+                            đối tác đáng tin cậy của nhiều khách hàng và doanh
+                            nghiệp trên toàn quốc.
+                          </p>
                           <a href="#">Chi tiết &rarr;</a>
                         </div>
                       </div>
@@ -353,15 +384,22 @@
                     <div class="item__product">
                       <div class="product__item">
                         <a href="#" class="img__default">
-                          <img src="images/pro5.png" alt="product">
+                          <img src="images/pro5.png" alt="product" />
                         </a>
                         <div class="backgroud__behind">
-                          <a href="#"> <h3>Thi công hệ thống mạng công ty Tân Hùng Hải</h3></a>
-                          <p>Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa chất dùng trong các ngành công
-                            nghiệp, nông nghiệp, thực phẩm, nuôi trồng và chế
-                            biến thủy sản lâu năm chuyên nghiệp, uy tín với chất
-                            lượng hàng đầu, là đối tác đáng tin cậy của nhiều
-                            khách hàng và doanh nghiệp trên toàn quốc.</p>
+                          <a href="#">
+                            <h3>
+                              Thi công hệ thống mạng công ty Tân Hùng Hải
+                            </h3></a
+                          >
+                          <p>
+                            Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa
+                            chất dùng trong các ngành công nghiệp, nông nghiệp,
+                            thực phẩm, nuôi trồng và chế biến thủy sản lâu năm
+                            chuyên nghiệp, uy tín với chất lượng hàng đầu, là
+                            đối tác đáng tin cậy của nhiều khách hàng và doanh
+                            nghiệp trên toàn quốc.
+                          </p>
                           <a href="#">Chi tiết &rarr;</a>
                         </div>
                       </div>
@@ -369,15 +407,22 @@
                     <div class="item__product">
                       <div class="product__item heigh">
                         <a href="#" class="img__default">
-                          <img src="images/pro6.png" alt="product">
+                          <img src="images/pro6.png" alt="product" />
                         </a>
                         <div class="backgroud__behind">
-                          <a href="#"> <h3>Thi công hệ thống mạng công ty Tân Hùng Hải</h3></a>
-                          <p>Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa chất dùng trong các ngành công
-                            nghiệp, nông nghiệp, thực phẩm, nuôi trồng và chế
-                            biến thủy sản lâu năm chuyên nghiệp, uy tín với chất
-                            lượng hàng đầu, là đối tác đáng tin cậy của nhiều
-                            khách hàng và doanh nghiệp trên toàn quốc.</p>
+                          <a href="#">
+                            <h3>
+                              Thi công hệ thống mạng công ty Tân Hùng Hải
+                            </h3></a
+                          >
+                          <p>
+                            Công ty TNHH Tân Hùng Thái là công ty cung cấp hóa
+                            chất dùng trong các ngành công nghiệp, nông nghiệp,
+                            thực phẩm, nuôi trồng và chế biến thủy sản lâu năm
+                            chuyên nghiệp, uy tín với chất lượng hàng đầu, là
+                            đối tác đáng tin cậy của nhiều khách hàng và doanh
+                            nghiệp trên toàn quốc.
+                          </p>
                           <a href="#">Chi tiết &rarr;</a>
                         </div>
                       </div>
@@ -392,7 +437,75 @@
           </div>
         </div>
       </section>
-      <section class="team" id="team"></section>
+      <section class="team" id="team">
+        <div class="title__default">
+          <h3>Đội ngũ</h3>
+          <p>
+            Đội ngũ chúng tôi được hình thành từ những con người đến từ nhiều
+            nơi, nhiều tính cách, văn hóa, tôn giáo khác nhau, nhưng chính điều
+            đó đã tạo nên chúng tôi của ngày hôm nay, mạnh mẽ và vững chắc.
+          </p>
+        </div>
+        <div class="team__content">
+          <div class="owl-carousel" id="team__slide">
+            <div class="item">
+              <div class="team__img">
+                <div class="img__default">
+                  <img src="images/team1.jpg" alt="" />
+                </div>
+              </div>
+              <div class="descriptions">
+                <h3>Bùi Đông Nhật</h3>
+                <p>Chuyên viên thiết kế</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="team__img">
+                <div class="img__default">
+                  <img src="images/team2.jpg" alt="" />
+                </div>
+              </div>
+              <div class="descriptions">
+                <h3>Bùi Đông Nhật</h3>
+                <p>Chuyên viên thiết kế</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="team__img">
+                <div class="img__default">
+                  <img src="images/team3.jpg" alt="" />
+                </div>
+              </div>
+              <div class="descriptions">
+                <h3>Bùi Đông Nhật</h3>
+                <p>Chuyên viên thiết kế</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="team__img">
+                <div class="img__default">
+                  <img src="images/team4.jpg" alt="" />
+                </div>
+              </div>
+              <div class="descriptions">
+                <h3>Bùi Đông Nhật</h3>
+                <p>Chuyên viên thiết kế</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="team__img">
+                <div class="img__default">
+                  <img src="images/team2.jpg" alt="" />
+                </div>
+              </div>
+              <div class="descriptions">
+                <h3>Bùi Đông Nhật</h3>
+                <p>Chuyên viên thiết kế</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="contact" id="contact"></section>
     </main>
     <footer class="footer"></footer>
@@ -458,7 +571,7 @@
             .filter("[href='#" + id + "']")
             .addClass("active");
         });
-        var $owl = $(".owl-carousel");
+        var $owl = $("#service__slide");
 
         $owl.children().each(function (index) {
           $(this).attr("data-position", index); // NB: .attr() instead of .data()
@@ -493,10 +606,50 @@
           },
         });
 
-        $(document).on("click", ".owl-item>div", function () {
+        $(document).on("click", ".owl-item>.click__item", function () {
           // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
           var $speed = 300; // in ms
           $owl.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
+        });
+        var $owl2 = $("#team__slide");
+
+        $owl2.children().each(function (index) {
+          $(this).attr("data-position", index); // NB: .attr() instead of .data()
+        });
+
+        $owl2.owlCarousel({
+          center: true,
+          loop: true,
+          items: 3,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+              margin: 80,
+              stagePadding: 30,
+            },
+            600: {
+              items: 2,
+              margin: 80,
+              stagePadding: 50,
+            },
+            900: {
+              items: 3,
+              margin: 80,
+              stagePadding: 200,
+            },
+            1920: {
+              margin: 130,
+              stagePadding: 300,
+            },
+          },
+        });
+
+        $(document).on("click", ".owl-item>div", function () {
+          // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
+          var $speed = 300; // in ms
+          $owl2.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
         });
       });
     </script>
