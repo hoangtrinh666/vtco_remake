@@ -541,7 +541,7 @@
         </div>
         <div class="contact__content">
           <div class="background__map">
-            <div class="img__default">
+            <div class="img__background">
               <img src="images/background-map.png" alt="">
             </div>
           </div>
@@ -550,7 +550,7 @@
               <div class="col-0 col-md-1"></div>
               <div class="col-12 col-md-10">
                 <div class="row">
-                  <div class="col-12 col-md-7">
+                  <div class="col-12 col-md-7 d-flex align-item-center">
                     <div class="form__contact">
                       <div class="form__group">
                         <input type="text" id="inputName" placeholder="Họ & Tên">
@@ -561,16 +561,19 @@
                         <i class="fas fa-phone-alt"></i>
                       </div>
                       <div class="form__group">
-                        <input type="number" id="inputPhone" placeholder="Email">
+                        <input type="text" id="inputPhone" placeholder="Email">
                         <i class="fas fa-envelope"></i>
                       </div>
                       <div class="form__group">
                         <textarea class="form__textarea" placeholder="Tin nhắn của bạn" id="floatingTextarea2" style="height: 100px"></textarea>
                         <i class="icon__textarea fas fa-pen"></i>
                       </div>
+                      <div class="form__group">
+                        <input class="submit" type="button" value="Submit">
+                      </div>
                     </div>
                   </div>
-                  <div class="col-12 col-md-5">
+                  <div class="col-12 col-md-5 d-flex align-item-center">
                     <div class="info__contact">
                       <div class="contact__default d-flex">
                         <div><i class="fas fa-phone-alt"></i></div>
@@ -602,11 +605,89 @@
               <div class="col-0 col-md-1"></div>
             </div>
           </div>
-          
         </div>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col-3">
+                <div class="footer__content">
+                  <h3>Dịch vụ</h3>
+                  <p>Giá thành</p>
+                  <p>Chúng tôi</p>
+                  <p>Dịch vụ</p>
+                  <p>Định hướng</p>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="footer__content">
+                  <h3>Chính sách</h3>
+                  <p>Chính sách</p>
+                  <p>Hỗ trợ</p>
+                  <p>Bảo mật</p>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="footer__content">
+                  <h3>Nhân lực</h3>
+                  <p>Lập trình viên</p>
+                  <p>Thiết kế</p>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="footer__content">
+                  <h3>Blog</h3>
+                  <p>CEO</p>
+                  <p>Cuộc sống</p>
+                  <p>Điều khoản</p>
+                  <p>Công nghệ</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-0 col-md-2"></div>
+          <div class="col-12 col-md-4">
+            <div class="footer__content">
+              <h3>Theo dõi chúng tôi trên</h3>
+              <div class="footer__social d-flex">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+              <h3>Đăng ký nhập thông tin</h3>
+              <div class="form__footer">
+                <input type="email" id="inputName" placeholder="Email">
+                <i class="fas fa-envelope"></i>
+                <a href="#"> <i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <hr>
+        <div class="d-flex justify-content-between">
+          <div class="left__content">
+            <p>All rights Reserved <i class="fas fa-copyright"></i> <span>Your Company, 2021</span></p>
+          </div>
+          <div class="right__content">
+            <p>by VTCode</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -639,20 +720,6 @@
         });
         // Bind to scroll
         $(window).scroll(function () {
-          // //back to top
-          // if ($(this).scrollTop() > 900) {
-          //     $(".back-to-top").fadeIn();
-          // }
-          // else {
-          //     $(".back-to-top").fadeOut();
-          // }
-          // //show menu
-          // if ($(this).scrollTop()) {
-          //     $(".header").addClass("show-menu");
-          // }
-          // else {
-          //     $(".header").removeClass("show-menu");
-          // }
           // Get container scroll position
           var fromTop = $(this).scrollTop() + topMenuHeight;
 
@@ -724,7 +791,7 @@
             0: {
               items: 1,
               margin: 80,
-              stagePadding: 30,
+              stagePadding: 60,
             },
             600: {
               items: 2,
