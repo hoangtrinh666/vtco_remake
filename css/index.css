@@ -690,3 +690,88 @@ body {
   margin-bottom: 18px;
   border: 2px solid #ffffff;
 }
+/*liên hệ*/
+.form-floating{
+  margin-bottom: 24px;
+}
+.form__group{
+  position: relative;
+  margin-bottom: 24px; 
+}
+.form__group input, .form__group .form__textarea{
+  padding: 8px 33px;
+  height: unset;
+  background: linear-gradient(130.17deg, rgba(255, 255, 255, 0.136) 2.38%, rgba(255, 255, 255, 0.85) 98.89%);
+  backdrop-filter: blur(60px);
+  border-radius: 85px;
+  width: 100%;
+  outline: unset;
+  border: 2px solid var(--white);
+}
+.form__group input::placeholder, .form__group .form__textarea::placeholder{
+  font-size: var(--font-size-text);
+  color: var(--blue-grey-400);
+  font-weight: 400;
+  line-height: 22px;
+}
+.form__group i{
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue-grey-400);
+  font-size: 11px;
+}
+.form__group .form__textarea{
+    border-radius: 16px;
+}
+.form__group .icon__textarea{
+  position: absolute;
+  top: 20px;
+  left: 15px;
+}
+.info__contact{
+  padding: 65px 27px;
+  position: relative;
+  z-index: 5;
+}
+.contact__default div i{
+  font-size: 11px;
+  padding: 10px;
+  background: linear-gradient(137.73deg, rgba(255, 255, 255, 0) 4.16%, rgba(255, 255, 255, 0.5) 102.02%);
+  border-radius: 10px;
+  border: 1px solid var(--white);
+  margin-right: 13px;
+  color: var(--theme-primary);
+}
+.contact__default .contact__name{
+  padding-top: 8px;
+}
+.contact__default .contact__name h3{
+  font-size: var(--font-size-text);
+  line-height: 21px;
+  color: var(--blue-grey-600);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-style: normal;
+}
+.contact__default .contact__name p, .contact__default .contact__name a{
+  font-size: var(--font-size-text);
+  color: var(--blue-grey-400);
+  font-weight: 400;
+  line-height: 22px;
+  font-style: normal;
+}
+.contact__default .contact__name a{
+  text-decoration: none;
+}
+.contact__default .contact__name a:hover{
+  color: var(--theme-primary);
+}
+.contact__default{
+  margin-bottom: 38px;
+}
+.contact__default:last-child{
+  margin-bottom: 0;
+}
