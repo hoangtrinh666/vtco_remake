@@ -575,26 +575,27 @@ body {
   filter: blur(5px);
 }
 #team__slide .owl-item .item .img__default{
-  padding-bottom: 130%;
+  padding-bottom: 140%;
   width: 100%;
   border: 2px solid #ffffff;
 }
 #team__slide .owl-item > div {
   cursor: pointer;
   transform: scale(1);
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 #team__slide .owl-item.center > div {
   cursor: auto;
   transform: scale(1.1);
+  transition: all .3s ease;
 }
 #team__slide .owl-item > div{
   opacity: .8;
-  transition: all .5s ease;
+  transition: all .3s ease;
 }
 #team__slide .owl-item.center > div{
   opacity: 1;
-  transition: all .5s ease;
+  transition: all .3s ease;
 }
 #team__slide .owl-item:not(.center) > div:hover{
   opacity: 1;
