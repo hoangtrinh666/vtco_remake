@@ -105,6 +105,9 @@
     }
 }
 @media (max-width: 600px){
+    .menu__mb{
+        inset: 0 0 0 30%;
+    }
     .footer__content{
         margin-top: 0;
         margin-bottom: 20px;
