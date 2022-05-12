@@ -34,6 +34,7 @@ body {
   height: 0;
   margin-bottom: 0px;
   transition: all 0.35s;
+  z-index: 5;
 }
 .img__default img {
   position: absolute;
@@ -434,7 +435,7 @@ body {
   border-radius: 27px;
   border: 2px solid #ffffff;
   padding: 23px 23px 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 .heigh .img__default {
@@ -493,6 +494,8 @@ body {
 }
 .see-more {
   margin-top: 52.71px;
+  position: relative;
+  z-index: 5;
 }
 .see-more a {
   background-color: transparent;
@@ -633,6 +636,7 @@ body {
 }
 .team__img {
   position: relative;
+  z-index: 5;
 }
 #team__slide .owl-item:nth-child(4n + 4) div .team__img::before,
 #team__slide .owl-item:nth-child(4n + 2) div .team__img::before {
@@ -728,6 +732,7 @@ body {
     rgba(0, 255, 255, 0) 100%
   );
   filter: blur(254px);
+  z-index: -1;
 }
 .contact::after {
   content: "";
@@ -743,6 +748,7 @@ body {
     rgba(255, 176, 7, 0) 100%
   );
   filter: blur(254px);
+  z-index: -1;
 }
 .form-floating {
   margin-bottom: 24px;
@@ -896,6 +902,10 @@ hr {
   margin-top: 38px;
   margin-bottom: 25px;
 }
+.footer__content{
+  position: relative;
+  z-index: 5;
+}
 .footer__content h3 {
   color: var(--blue-grey-600);
   font-family: "Nunito", sans-serif;
@@ -904,7 +914,10 @@ hr {
   line-height: 27px;
   margin-bottom: 27px;
 }
-.footer__content p {
+.footer__content a{
+  text-decoration: none;
+}
+.footer__content a p {
   color: var(--blue-grey-400);
   font-style: normal;
   font-size: var(--font-size-text);
@@ -930,6 +943,7 @@ hr {
 }
 .form__footer{
   position: relative;
+  z-index: 1;
 }
 .form__footer input {
   padding: 8px 33px;
