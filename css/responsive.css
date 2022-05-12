@@ -62,8 +62,8 @@
     .menu__mb{
         position: fixed;
         inset: 0 0 0 60%;
-        background: linear-gradient(137.73deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, 1));
-        backdrop-filter: blur(100px);
+        background:  rgba(255, 255, 255, 1);
+        backdrop-filter: blur(30px);
         transform: translateX(100%);
         z-index: 9999;
         opacity: 0;
@@ -72,7 +72,7 @@
     }
     .overlay{
         position: fixed;
-        background-color: hsl(0 0% 90% / 0.5);
+        background-color: rgba(0, 0, 0, 0.3);
         top: 0;
         right: 0;
         bottom: 0;
