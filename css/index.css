@@ -957,7 +957,10 @@ hr {
   border-radius: 85px;
   width: 100%;
   outline: unset;
-  border: 2px solid var(--white);
+  border: 2px solid var(--primary);
+}
+.form__footer input:focus, .form__footer input:focus-visible{
+  border: 2px solid var(--theme-primary);
 }
 .form__footer a{
   position: absolute;

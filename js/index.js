@@ -1,0 +1,210 @@
+function addAlert(msg, delay, feel) {
+  $(".alert-modal").append(
+    '<div class="overlay-modal non-animate "><div class="alert ' +
+      feel +
+      '"><i class="icon-nofication fas fa-bell feel"></i><span>' +
+      msg +
+      '</span><i class="fas fa-times icon-delete"></i></div></div>'
+  );
+  $(".non-animate").animate({ left: "0" });
+  $(".non-animate")
+    .removeClass("non-animate")
+    .delay(delay)
+    .fadeOut(function () {
+      $(this).remove();
+    });
+  if ($(".alert-modal .alert").length > 6) {
+    $(".alert-modal .alert").eq(0).remove();
+  }
+}
+$(document).on("click", ".alert-modal .alert", function () {
+  $(this).stop(false, true);
+});
+$(document).ready(function () {
+  var topMenu = $(".navbar-nav"),
+    topMenuHeight = topMenu.outerHeight() + 120,
+    menuItems = topMenu.find("a"),
+    scrollItems = menuItems.map(function () {
+      var item = $($(this).attr("href"));
+      if (item.length) {
+        return item;
+      }
+    });
+  $("a").on("click", function (event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top,
+        },
+        800,
+        function () {
+          window.location.hash = hash;
+        }
+      );
+    }
+  });
+  $(".navbar-toggler").click(function () {
+    $(".overlay").addClass("show-overlay");
+  });
+  $(".overlay").click(function () {
+    $(".overlay").removeClass("show-overlay");
+    $(".menu__mb").removeClass("show");
+  });
+  // Bind to scroll
+  $(window).scroll(function () {
+    // Get container scroll position
+    var fromTop = $(this).scrollTop() + topMenuHeight;
+
+    // Get id of current scroll item
+    var cur = scrollItems.map(function () {
+      if ($(this).offset().top < fromTop) return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length - 1];
+    var id = cur && cur.length ? cur[0].id : "";
+    // Set/remove active class
+    menuItems
+      .removeClass("active")
+      .filter("[href='#" + id + "']")
+      .addClass("active");
+  });
+  var $owl = $("#service__slide");
+
+  $owl.children().each(function (index) {
+    $(this).attr("data-position", index); // NB: .attr() instead of .data()
+  });
+
+  $owl.owlCarousel({
+    center: true,
+    loop: true,
+    items: 3,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout:2000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 80,
+        stagePadding: 30,
+      },
+      600: {
+        items: 2,
+        margin: 80,
+        stagePadding: 50,
+      },
+      900: {
+        items: 3,
+        margin: 80,
+        stagePadding: 200,
+      },
+      1720: {
+        margin: 100,
+        stagePadding: 250,
+      },
+      1920: {
+        margin: 130,
+        stagePadding: 300,
+      },
+    },
+  });
+
+  $(document).on("click", ".owl-item>.click__item", function () {
+    var $speed = 300; // in ms
+    $owl.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
+  });
+  var $owl2 = $("#team__slide");
+
+  $owl2.children().each(function (index) {
+    $(this).attr("data-position", index);
+  });
+
+  $owl2.owlCarousel({
+    center: true,
+    loop: true,
+    items: 3,
+    nav: false,
+    dots: false,
+    //default settings:
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 80,
+        stagePadding: 60,
+      },
+      600: {
+        items: 2,
+        margin: 80,
+        stagePadding: 50,
+      },
+      900: {
+        items: 3,
+        margin: 100,
+        stagePadding: 200,
+      },
+      1720: {
+        margin: 150,
+        stagePadding: 300,
+      },
+      1920: {
+        margin: 180,
+        stagePadding: 350,
+      },
+    },
+  });
+
+  $(document).on("click", ".owl-item>.team__item", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var $speed = 300; // in ms
+    $owl2.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
+  });
+  $(".submit").click(function () {
+    const name = $("#inputName").val();
+    const phone = $("#inputPhone").val();
+    const email = $("#inputEmail").val();
+    const des = $("#textareaDes").val();
+    const regexEmail =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const regexPhone = /((09|03|07|08|05|19)+([0-9]{8})\b)/g;
+    if (
+      name == "" &&
+      !regexEmail.test(email) &&
+      !regexPhone.test(phone) &&
+      des == ""
+    ) {
+      addAlert("Vui lòng nhập đầy đủ thông tin", 2000, "error");
+    } else if (name == "") {
+      addAlert("Vui lòng nhập tên", 1000, "warning");
+    } else if (!regexPhone.test(phone)) {
+      addAlert("Số điện thoại không hợp lệ!", 1000, "warning");
+    } else if (!regexEmail.test(email)) {
+      addAlert("Email không hợp lệ!", 1000, "warning");
+    } else if (des == "") {
+      addAlert("Vui lòng nội dung", 1000, "warning");
+    } else {
+      addAlert(
+        "Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất có thể!",
+        2000,
+        "success"
+      );
+    }
+  });
+  $(".register-mail").click(function (e) {
+    e.preventDefault();
+    const email = $("#inputEmailFooter").val();
+    const regexEmail =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!regexEmail.test(email)) {
+      addAlert("Email không hợp lệ!", 1000, "warning");
+    } else {
+      addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
+    }
+  });
+});
