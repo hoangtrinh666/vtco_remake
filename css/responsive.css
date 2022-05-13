@@ -3,6 +3,14 @@
         max-width: 1140px;
     }
 }
+@media (max-width: 1760px){
+    .container{
+        max-width: 1140px;
+    }
+    .banner__text{
+        width: 70%;
+    }
+}
 @media (max-width: 1400px){
     .container{
         max-width: 1140px;
@@ -150,4 +158,10 @@
     #team__slide .owl-item > div .descriptions h3{
         font-size: 24px;
     }
+    .alert{
+        width: 250px;
+    }
+    .non-animate{
+        left: 350px;
+      }
 }

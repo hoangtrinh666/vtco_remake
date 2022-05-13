@@ -554,21 +554,21 @@
               <div class="col-12 col-md-10">
                 <div class="row">
                   <div class="col-12 col-md-7 d-flex align-item-center">
-                    <div class="form__contact">
+                    <div class="form__contact" id="contact_saveData">
                       <div class="form__group">
                         <input type="text" id="inputName" placeholder="Họ & Tên">
                         <i class="fas fa-user"></i>
                       </div>
                       <div class="form__group">
-                        <input type="email" id="inputEmail" placeholder="Điện thoại">
+                        <input type="email" id="inputPhone" placeholder="Điện thoại">
                         <i class="fas fa-phone-alt"></i>
                       </div>
                       <div class="form__group">
-                        <input type="text" id="inputPhone" placeholder="Email">
+                        <input type="text" id="inputEmail" placeholder="Email">
                         <i class="fas fa-envelope"></i>
                       </div>
                       <div class="form__group">
-                        <textarea class="form__textarea" placeholder="Tin nhắn của bạn" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <textarea class="form__textarea" placeholder="Tin nhắn của bạn" id="textareaDes" style="height: 100px"></textarea>
                         <i class="icon__textarea fas fa-pen"></i>
                       </div>
                       <div class="form__group">
@@ -582,14 +582,14 @@
                         <div><i class="fas fa-phone-alt"></i></div>
                         <div class="contact__name">
                           <h3>Điện thoại</h3>
-                          <a href="tel:1900779918">1900 77 99 18</a>
+                          <a href="tel:1900779918" title="Điện thoại liên hệ VTCode">1900 77 99 18</a>
                         </div>
                       </div>
                       <div class="contact__default d-flex">
                         <div><i class="fas fa-envelope"></i></div>
                         <div class="contact__name">
                           <h3>Email</h3>
-                          <a href="mailto:info@vtcode.vn">info@vtcode.vn</a>
+                          <a href="mailto:info@vtcode.vn" title="Email liên hệ VTCode">info@vtcode.vn</a>
                         </div>
                       </div>
                       <div class="contact__default d-flex">
@@ -598,7 +598,7 @@
                         </div>
                         <div class="contact__name">
                           <h3>Địa chỉ</h3>
-                          <p>234 Ngô Tất Tố, phường 22, quận Bình Thạnh, Tp. Hồ Chí Minh</p>
+                          <a target="_blank" href="https://goo.gl/maps/HJQ1Yiy3oDaA2SrM6" title="Địa chỉ VTCode">234 Ngô Tất Tố, phường 22, quận Bình Thạnh, Tp. Hồ Chí Minh</a>
                         </div>
                       </div>
                     </div>
@@ -675,9 +675,9 @@
                 <div class="col-12 col-md-6 col-lg-12">
                   <h3>Đăng ký nhập thông tin</h3>
                   <div class="form__footer">
-                    <input type="email" id="inputName" placeholder="Email">
+                    <input type="email" id="inputEmailFooter" placeholder="Email">
                     <i class="fas fa-envelope"></i>
-                    <a href="#"> <i class="fas fa-chevron-right"></i></a>
+                    <a href="#" class="register-mail"> <i class="fas fa-chevron-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -688,20 +688,37 @@
       <div class="container">
         <hr>
         <div class="d-flex justify-content-between">
-          <div class="left__content">
-            <p>All rights Reserved <i class="fas fa-copyright"></i> <span>Your Company, 2021</span></p>
+          <div class="left__content d-flex align-item-center" style="height: 100%; width: 50%;">
+            <p style="margin-bottom: 0;">All rights Reserved <i class="fas fa-copyright"></i> <span>Your Company, 2021</span></p>
           </div>
-          <div class="right__content">
-            <p>by VTCode</p>
+          <div class="right__content d-flex align-item-center justify-content-end" style="height: 100%; width: 50%;">
+            <p style="text-align: right; margin-bottom: 0;">by VTCode</p>
           </div>
         </div>
       </div>
     </footer>
+    <div class="alert-modal">
+    </div>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script>
+      function addAlert(msg, delay, feel) {
+        $('.alert-modal').append('<div class="overlay-modal non-animate "><div class="alert '+ feel +'"><i class="icon-nofication fas fa-bell feel"></i><span>'+ msg +'</span><i class="fas fa-times icon-delete"></i></div></div>');
+        $(".non-animate").animate({left: "0"})
+        $(".non-animate").removeClass('non-animate').delay(delay).fadeOut(function() {
+          $(this).remove();
+        })
+        if($(".alert-modal .alert").length > 6){
+            $(".alert-modal .alert").eq(0).remove();
+        }
+      }
+      $(document).on("click", ".alert-modal .alert", 
+      function(){
+        $(this).stop(false, true);
+      })
       $(document).ready(function () {
         var topMenu = $(".navbar-nav"),
           topMenuHeight = topMenu.outerHeight() + 120,
@@ -816,20 +833,55 @@
             },
             900: {
               items: 3,
-              margin: 80,
+              margin: 100,
               stagePadding: 200,
             },
             1920: {
-              margin: 130,
+              margin: 180,
               stagePadding: 350,
             },
           },
         });
 
-        $(document).on("click", ".owl-item>div", function () {
+        $(document).on("click", ".owl-item>div", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
           var $speed = 300; // in ms
           $owl2.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
         });
+        $('.submit').click(function(){
+          const name = $('#inputName').val();
+          const phone = $('#inputPhone').val();
+          const email = $('#inputEmail').val();
+          const des = $('#textareaDes').val();
+          const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          const regexPhone = /((09|03|07|08|05|19)+([0-9]{8})\b)/g;
+          if(name == '' && !regexEmail.test(email) && !regexPhone.test(phone) && des == ''){
+            addAlert("Vui lòng nhập đầy đủ thông tin", 2000, "error")
+
+          } else if( name == ''){
+            addAlert("Vui lòng nhập tên", 1000, "warning")
+          } else if(!regexPhone.test(phone)) {
+            addAlert("Số điện thoại không hợp lệ!", 1000, "warning")
+          } else if(!regexEmail.test(email)) {
+            addAlert("Email không hợp lệ!", 1000, "warning")
+          } else if( des == ''){
+            addAlert("Vui lòng nội dung", 1000, "warning")
+          } else{
+            addAlert("Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất có thể!", 2000, "success")
+          }
+        })
+        $('.register-mail').click(function(e){
+          e.preventDefault();
+          const email = $('#inputEmailFooter').val();
+          const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          if(!regexEmail.test(email)){
+            addAlert("Email không hợp lệ!", 1000, "warning")
+          }
+          else {
+            addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success")
+          }
+        })
       });
     </script>
   </body>
