@@ -1,10 +1,10 @@
 @media (min-width: 1920px){
-    .container{
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
         max-width: 1140px;
     }
 }
 @media (max-width: 1760px){
-    .container{
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
         max-width: 1140px;
     }
     .banner__text{
@@ -12,8 +12,8 @@
     }
 }
 @media (max-width: 1400px){
-    .container{
-        max-width: 1140px;
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+        max-width: 1140px !important;
     }
     .project::before{
         left: 5%;
@@ -21,11 +21,11 @@
     .project::after{
         right: 5%;
     }
-
 }
-@media (max-width: 969px){
+@media (max-width: 1024px){
     .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
         padding: 10px;
+        max-width: 992px;
     }
     .banner__text h1{
         font-size: 60px;
@@ -111,8 +111,12 @@
     .navbar-collapse{
         align-items: flex-start;
     }
+    .banner__images{
+        top: 10%;
+    }
 }
-@media (max-width: 600px){
+
+@media (max-width: 768px){
     .menu__mb{
         inset: 0 0 0 30%;
     }
@@ -127,8 +131,8 @@
         width: 100%;
     }
     .banner__text h1{
-        font-size: 45px;
-        line-height: 60px;
+        font-size: 70px;
+        line-height: 80px;
     }
     .banner__text p{
         width: 100%;
@@ -162,6 +166,33 @@
         width: 250px;
     }
     .non-animate{
-        left: 350px;
-      }
+        left: 3 50px;
+    }
+    
+}
+@media (max-width: 567px){
+    .banner__text h1{
+        font-size: 37px;
+        line-height: 45px;
+    }
+    .contact__content{
+        padding-top: 30px;
+    }
+    .item__product:hover .product__item{
+        transform: unset;
+    }
+    .item__product:hover .product__item .img__default{
+        z-index: 5;
+    }
+    .flip{
+        transform: rotateY(180deg) !important;
+        transition: all .5s ease !important;
+    }
+    .show_background{
+        z-index: 10 !important;
+        transition: all .5s ease !important;
+    }
+    .item__product:hover .product__item .backgroud__behind{
+        z-index: unset;
+    }
 }

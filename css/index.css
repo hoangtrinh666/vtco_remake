@@ -142,7 +142,7 @@ body {
   padding: 150px 0 210px 0;
 }
 .banner__text {
-  width: 80%;
+  width: 70%;
 }
 .banner__text h1 {
   background: linear-gradient(
@@ -306,7 +306,7 @@ body {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
   font-size: var(--font-size-text);
   color: var(--blue-grey-600);
   font-weight: 400;
@@ -489,7 +489,7 @@ body {
   z-index: -1;
   transition: all 0.2s ease;
 }
-.item__product:hover .product__item.backgroud__behind {
+.item__product:hover .product__item .backgroud__behind {
   z-index: 4;
 }
 .see-more {

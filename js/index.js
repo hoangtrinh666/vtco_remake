@@ -88,30 +88,45 @@ $(document).ready(function () {
     responsive: {
       0: {
         items: 1,
-        margin: 80,
+        margin: 50,
         stagePadding: 30,
       },
-      600: {
-        items: 2,
+      350: {
+        items: 1,
+        margin: 50,
+        stagePadding: 80,
+      },
+      576: {
+        items: 1,
         margin: 80,
-        stagePadding: 50,
+        stagePadding: 150,
+      },
+      768: {
+        margin: 50,
+        stagePadding: 80,
       },
       900: {
-        items: 3,
         margin: 80,
+        stagePadding: 100,
+      },
+      1200: {
+        margin: 80,
+        stagePadding: 150,
+      },
+      1400: {
+        margin: 100,
         stagePadding: 200,
       },
-      1720: {
-        margin: 100,
-        stagePadding: 250,
+      1600: {
+        margin: 130,
+        stagePadding: 230,
       },
       1920: {
-        margin: 130,
+        margin: 180,
         stagePadding: 300,
       },
     },
   });
-
   $(document).on("click", ".owl-item>.click__item", function () {
     var $speed = 300; // in ms
     $owl.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
@@ -135,26 +150,42 @@ $(document).ready(function () {
     responsive: {
       0: {
         items: 1,
-        margin: 80,
-        stagePadding: 60,
+        margin: 50,
+        stagePadding: 30,
       },
-      600: {
-        items: 2,
+      350: {
+        items: 1,
+        margin: 50,
+        stagePadding: 80,
+      },
+      576: {
+        items: 1,
         margin: 80,
-        stagePadding: 50,
+        stagePadding: 150,
+      },
+      768: {
+        margin: 50,
+        stagePadding: 80,
       },
       900: {
-        items: 3,
+        margin: 80,
+        stagePadding: 100,
+      },
+      1200: {
+        margin: 80,
+        stagePadding: 150,
+      },
+      1400: {
         margin: 100,
         stagePadding: 200,
       },
-      1720: {
-        margin: 150,
-        stagePadding: 300,
+      1600: {
+        margin: 130,
+        stagePadding: 230,
       },
       1920: {
-        margin: 180,
-        stagePadding: 350,
+        margin: 200,
+        stagePadding: 300,
       },
     },
   });
@@ -207,4 +238,14 @@ $(document).ready(function () {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
     }
   });
+  $('.item__product .product__item a img').click(function(e){
+    e.preventDefault();
+    $(this).parent('a').parent('.product__item').addClass('flip');
+    $(this).parent('a').siblings('.backgroud__behind').addClass('show_background');
+  })
+  $('.backgroud__behind').click(function(e){
+    e.preventDefault();
+    $(this).parent('.product__item').removeClass('flip');
+    $(this).removeClass('show_background');
+  })
 });
