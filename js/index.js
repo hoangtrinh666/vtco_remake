@@ -21,29 +21,26 @@ $(document).on("click", ".alert-modal .alert", function () {
   $(this).stop(false, true);
 });
 $(document).ready(function () {
-  var topMenu = $(".navbar-nav"),
-    topMenuHeight = topMenu.outerHeight() + 15,
+  var lastId,
+    topMenu = $(".navbar-nav"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
     menuItems = topMenu.find("a"),
-    scrollItems = menuItems.map(function () {
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
       var item = $($(this).attr("href"));
-      if (item.length) {
-        return item;
-      }
+      if (item.length) { return item; }
     });
-  $(".nav-link").on("click", function (event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      var hash = this.hash;
-      $("html, body").animate(
-        {
-          scrollTop: $(hash).offset().top,
-        },
-        300,
-        function () {
-          window.location.hash = hash;
-        }
-      );
-    }
+
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function(e){
+    var href = $(this).attr("href"),
+        offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+    $('html, body').stop().animate({ 
+        scrollTop: offsetTop
+    }, 300);
+    e.preventDefault();
   });
   $(".navbar-toggler").click(function () {
     $(".overlay").addClass("show-overlay");
