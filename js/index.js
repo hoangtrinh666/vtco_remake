@@ -107,8 +107,13 @@ $(document).ready(function () {
         stagePadding: 250,
       },
       900: {
+        items: 1,
+        margin: 200,
+        stagePadding: 300,
+      },
+      1100:{
         margin: 80,
-        stagePadding: 100,
+        stagePadding: 180,
       },
       1200: {
         margin: 80,
@@ -156,22 +161,32 @@ $(document).ready(function () {
       },
       350: {
         items: 1,
-        margin: 50,
-        stagePadding: 80,
+        margin: 80,
+        stagePadding: 50,
       },
-      576: {
+      500: {
         items: 1,
         margin: 80,
         stagePadding: 150,
       },
-      768: {
+      700: {
         items: 1,
-        margin: 150,
-        stagePadding: 250,
+        margin: 100,
+        stagePadding: 200,
+      },
+      800:{
+        items: 1,
+        margin: 130,
+        stagePadding: 250
       },
       900: {
+        items: 1,
+        margin: 200,
+        stagePadding: 300,
+      },
+      1100:{
         margin: 80,
-        stagePadding: 100,
+        stagePadding: 180,
       },
       1200: {
         margin: 80,

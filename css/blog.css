@@ -231,9 +231,9 @@ p.blog__text:first-child {
   backdrop-filter: blur(10px);
   margin-bottom: 40px;
 }
-.related__posts .container .row>*{
-    padding-left: 20px;
-    padding-right: 20px;
+.related__posts .container .row > * {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .title__related h3 {
   color: var(--blue-grey-900);
@@ -255,20 +255,26 @@ p.blog__text:first-child {
   );
   backdrop-filter: blur(60px);
   transform: translateY(0);
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
-.related__post:hover{
-    transform: translateY(-10px);
+.related__post:hover {
+  transform: translateY(-10px);
 }
 .related__post .img__default {
   padding-bottom: 80%;
   border-radius: 10px;
   margin-bottom: 17px;
 }
-.related__post a{
-  text-decoration: none ;
+.related__post a {
+  text-decoration: none;
 }
 .related__post a h3 {
+  height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   background: linear-gradient(
     112.77deg,
     rgba(19, 125, 183, 1) 0%,

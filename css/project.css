@@ -165,8 +165,9 @@ body {
   font-family: "Nunito", sans-serif;
   text-align: center;
 }
-.blog__title .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
-    background: linear-gradient(
+.blog__title .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background: linear-gradient(
     112.77deg,
     rgba(19, 125, 183, 1) 0%,
     rgba(79, 224, 182, 1) 100%
@@ -175,27 +176,27 @@ body {
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-.blog__title .nav-tabs .nav-link{
-    margin-bottom: 0;
-    border: unset;
-    border-top-left-radius: unset;
-    border-top-right-radius: unset  ;
-    color: var(--blue-grey-900);
-    font-size: var(--font-size-sub-title);
-    font-weight: 600; 
+.blog__title .nav-tabs .nav-link {
+  margin-bottom: 0;
+  border: unset;
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+  color: var(--blue-grey-900);
+  font-size: var(--font-size-sub-title);
+  font-weight: 600;
   line-height: 140%;
   margin-bottom: 0;
   font-family: "Nunito", sans-serif;
   text-align: center;
 }
-.blog__title .nav-tabs{
-    border-bottom: unset;
+.blog__title .nav-tabs {
+  border-bottom: unset;
 }
-.blog__title .nav-link{
-    padding: 0 15px;
+.blog__title .nav-link {
+  padding: 0 15px;
 }
-.blog__title .nav{
-    justify-content: center;
+.blog__title .nav {
+  justify-content: center;
 }
 .related__post {
   padding: 30px 20px;
@@ -219,10 +220,16 @@ body {
   border-radius: 10px;
   margin-bottom: 17px;
 }
-.related__post a{
+.related__post a {
   text-decoration: none;
 }
 .related__post a h3 {
+  height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   background: linear-gradient(
     112.77deg,
     rgba(19, 125, 183, 1) 0%,

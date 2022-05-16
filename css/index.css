@@ -367,7 +367,7 @@ body {
   backdrop-filter: blur(20px);
 }
 .owl-carousel .owl-stage-outer {
-  padding: 30px 0;
+  padding: 40px 0;
 }
 /*Project*/
 .project,
@@ -441,7 +441,16 @@ body {
   padding: 23px 23px 0;
   z-index: 3;
 }
-
+.list__project .row .col-12 .list__product,
+.list__project .row .col-md-4 .list__product {
+  display: flex;
+  flex-direction: column;
+}
+.list__project .row .col-12:nth-child(2) .list__product,
+.list__project .row .col-md-4:nth-child(2) .list__product {
+  display: flex;
+  flex-direction: column-reverse;
+}
 .heigh .img__default {
   padding-bottom: 120% !important;
 }
@@ -515,6 +524,12 @@ body {
   color: var(--primary);
 }
 .background__behind a h3 {
+  height: 53px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-size: var(--font-size-title-2);
   font-weight: 700;
   font-family: "Nunito", sans-serif;
