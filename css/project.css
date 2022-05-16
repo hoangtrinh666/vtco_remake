@@ -140,7 +140,7 @@ body {
 /*blog*/
 .blog__description {
   padding: 40px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   border: 2px solid var(--white);
   background: rgba(19, 125, 183, 0.07);
   backdrop-filter: blur(10px);

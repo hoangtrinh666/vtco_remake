@@ -56,8 +56,12 @@
   .project::after {
     display: none;
   }
+  .title__default p{
+      width: 60%;
+  }
 }
 @media (max-width: 1024px) {
+
   .container,
   .container-fluid,
   .container-lg,

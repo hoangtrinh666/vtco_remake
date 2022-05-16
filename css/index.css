@@ -604,7 +604,7 @@ body {
   background: linear-gradient(180deg, #c1fff4 0%, rgba(193, 255, 244, 0) 100%);
   filter: blur(5px);
 }
-#team__slide .owl-item .item .img__default {
+#team__slide .owl-item .item .item__team .img__default {
   padding-bottom: 140%;
   width: 100%;
   border: 2px solid #ffffff;
@@ -655,15 +655,20 @@ body {
 #team__slide .owl-item.center > div .descriptions {
   opacity: 1;
 }
-#team__slide .owl-item:nth-child(4n + 4) div .team__img .img__default {
+#team__slide .owl-item:nth-child(4n + 4) div .item__team .team__img .img__default {
   border-radius: 98px 50px 29.5px 29.5px !important;
+  width: calc(100% +20px);
 }
 .team__img {
   position: relative;
   z-index: 5;
 }
-#team__slide .owl-item:nth-child(4n + 4) div .team__img::before,
-#team__slide .owl-item:nth-child(4n + 2) div .team__img::before {
+#team__slide .owl-item:nth-child(4n + 4) div .item__team,
+#team__slide .owl-item:nth-child(4n + 2) div .item__team {
+  padding-right: 20px;
+}
+#team__slide .owl-item:nth-child(4n + 4) div .item__team  .team__img::before,
+#team__slide .owl-item:nth-child(4n + 2) div .item__team  .team__img::before {
   content: "";
   border-radius: 98px 50px 29.5px 29.5px;
   position: absolute;
@@ -677,23 +682,30 @@ body {
   width: 100%;
   height: 100%;
 }
-#team__slide .owl-item:nth-child(4n + 3) div .team__img .img__default {
+#team__slide .owl-item:nth-child(4n + 3) div .item__team  .team__img .img__default {
+  border-radius: 50px 98px 29.5px 29.5px !important;
+  width: calc(100% +20px);
+}
+#team__slide .owl-item:nth-child(4n + 3) div .item__team .team__img::before {
   border-radius: 50px 98px 29.5px 29.5px !important;
 }
-#team__slide .owl-item:nth-child(4n + 3) div .team__img::before {
-  border-radius: 50px 98px 29.5px 29.5px !important;
+#team__slide .owl-item:nth-child(4n + 2) div .item__team .img__default {
+  border-radius: 50px 29.5px 29.5px 98px !important;
+  width: calc(100% +20px);
 }
-#team__slide .owl-item:nth-child(4n + 2) div .img__default {
+#team__slide .owl-item:nth-child(4n + 2) div .item__team .team__img::before {
   border-radius: 50px 29.5px 29.5px 98px !important;
 }
-#team__slide .owl-item:nth-child(4n + 2) div .team__img::before {
-  border-radius: 50px 29.5px 29.5px 98px !important;
-}
-#team__slide .owl-item:nth-child(4n + 1) div .img__default {
+#team__slide .owl-item:nth-child(4n + 1) div .item__team .img__default {
   border-radius: 50px 29.5px 98px 29.5px !important;
+  width: calc(100% +20px);
 }
-#team__slide .owl-item:nth-child(4n + 1) div .team__img::before,
-#team__slide .owl-item:nth-child(4n + 3) div .team__img::before {
+#team__slide .owl-item:nth-child(4n + 1) div .item__team,
+#team__slide .owl-item:nth-child(4n + 3) div .item__team {
+  padding-left: 20px;
+}
+#team__slide .owl-item:nth-child(4n + 1) div .item__team .team__img::before,
+#team__slide .owl-item:nth-child(4n + 3) div .item__team .team__img::before {
   content: "";
   border-radius: 50px 29.5px 98px 29.5px;
   position: absolute;

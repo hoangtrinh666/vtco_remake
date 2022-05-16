@@ -111,9 +111,9 @@ $(document).ready(function () {
         margin: 200,
         stagePadding: 300,
       },
-      1100:{
-        margin: 80,
-        stagePadding: 180,
+      1024:{
+        margin: 100,
+        stagePadding: 0,
       },
       1200: {
         margin: 80,
@@ -150,9 +150,9 @@ $(document).ready(function () {
     nav: false,
     dots: false,
     //default settings:
-    autoplay: true,
-    autoplayTimeout: 2000,
-    autoplayHoverPause: true,
+    // autoplay: true,
+    // autoplayTimeout: 2000,
+    // autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1,
@@ -184,9 +184,9 @@ $(document).ready(function () {
         margin: 200,
         stagePadding: 300,
       },
-      1100:{
-        margin: 80,
-        stagePadding: 180,
+      1024:{
+        margin: 100,
+        stagePadding: 0,
       },
       1200: {
         margin: 80,
