@@ -300,9 +300,12 @@ body {
   line-height: 27px;
   margin-bottom: 20px;
   color: var(--blue-grey-600);
-  white-space: nowrap;
+  min-height: 24px;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .service__title span {
   min-height: 48px;

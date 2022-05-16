@@ -218,8 +218,7 @@ $(document).ready(function () {
     const phone = $("#inputPhone").val();
     const email = $("#inputEmail").val();
     const des = $("#textareaDes").val();
-    const regexEmail =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const regexPhone = /((09|03|07|08|05|19)+([0-9]{8})\b)/g;
     console.log(email)
     if (
@@ -248,8 +247,8 @@ $(document).ready(function () {
   $(".register-mail").click(function (e) {
     e.preventDefault();
     const emailfooter = $("#inputEmailFooter").val();
-    const checkEmail =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const checkEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
       console.log(emailfooter);
     if(emailfooter == ""){
       addAlert("Vui lòng nhập email !", 2000, "error")

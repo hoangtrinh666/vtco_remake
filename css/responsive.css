@@ -25,6 +25,12 @@
   .banner__text {
     width: 70%;
   }
+  .project::before {
+    left: 5%;
+  }
+  .project::after {
+    right: 5%;
+  }
 }
 @media (max-width: 1400px) {
   .container,
@@ -37,10 +43,18 @@
     max-width: 1140px !important;
   }
   .project::before {
-    left: 5%;
+    left: 0;
   }
   .project::after {
-    right: 5%;
+    right: 0;
+  }
+}
+@media (max-width: 1250px) {
+  .project::before {
+    display: none;
+  }
+  .project::after {
+    display: none;
   }
 }
 @media (max-width: 1024px) {
