@@ -2,6 +2,9 @@
     .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
         max-width: 1140px;
     }
+    .banner__partner .container{
+        max-width: 1320px;
+    }
 }
 @media (max-width: 1760px){
     .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
@@ -24,13 +27,29 @@
 }
 @media (max-width: 1024px){
     .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
-        padding: 10px;
-        max-width: 992px;
+        padding: 20px;
     }
     .banner__text h1{
         font-size: 60px;
         line-height: 80px;
 
+    }
+    .item__product:hover .product__item{
+        transform: unset;
+    }
+    .item__product:hover .product__item .img__default{
+        z-index: 5;
+    }
+    .flip{
+        transform: rotateY(180deg) !important;
+        transition: all .5s ease !important;
+    }
+    .show_background{
+        z-index: 10 !important;
+        transition: all .1s ease !important;
+    }
+    .item__product:hover .product__item .backgroud__behind{
+        z-index: unset;
     }
     .logo{
         padding: 0;
@@ -114,6 +133,13 @@
     .banner__images{
         top: 10%;
     }
+    .related__post{
+        margin-bottom: 20px;
+    }
+    .related__posts .container .row>*{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 @media (max-width: 768px){
@@ -172,27 +198,16 @@
 }
 @media (max-width: 567px){
     .banner__text h1{
-        font-size: 37px;
+        font-size: 45px;
         line-height: 45px;
     }
     .contact__content{
         padding-top: 30px;
     }
-    .item__product:hover .product__item{
-        transform: unset;
-    }
-    .item__product:hover .product__item .img__default{
-        z-index: 5;
-    }
-    .flip{
-        transform: rotateY(180deg) !important;
-        transition: all .5s ease !important;
-    }
-    .show_background{
-        z-index: 10 !important;
-        transition: all .5s ease !important;
-    }
-    .item__product:hover .product__item .backgroud__behind{
-        z-index: unset;
+}
+@media (max-width: 400px){
+    .banner__text h1{
+        font-size: 37px;
+        line-height: 45px;
     }
 }

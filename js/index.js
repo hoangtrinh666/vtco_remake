@@ -83,7 +83,7 @@ $(document).ready(function () {
     nav: false,
     dots: false,
     autoplay: true,
-    autoplayTimeout:2000,
+    autoplayTimeout: 2000,
     autoplayHoverPause: true,
     responsive: {
       0: {
@@ -102,8 +102,9 @@ $(document).ready(function () {
         stagePadding: 150,
       },
       768: {
-        margin: 50,
-        stagePadding: 80,
+        items: 1,
+        margin: 150,
+        stagePadding: 250,
       },
       900: {
         margin: 80,
@@ -164,8 +165,9 @@ $(document).ready(function () {
         stagePadding: 150,
       },
       768: {
-        margin: 50,
-        stagePadding: 80,
+        items: 1,
+        margin: 150,
+        stagePadding: 250,
       },
       900: {
         margin: 80,
@@ -202,8 +204,9 @@ $(document).ready(function () {
     const email = $("#inputEmail").val();
     const des = $("#textareaDes").val();
     const regexEmail =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const regexPhone = /((09|03|07|08|05|19)+([0-9]{8})\b)/g;
+    console.log(email)
     if (
       name == "" &&
       !regexEmail.test(email) &&
@@ -218,7 +221,7 @@ $(document).ready(function () {
     } else if (!regexEmail.test(email)) {
       addAlert("Email không hợp lệ!", 1000, "warning");
     } else if (des == "") {
-      addAlert("Vui lòng nội dung", 1000, "warning");
+      addAlert("Vui lòng nhập nội dung", 1000, "warning");
     } else {
       addAlert(
         "Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất có thể!",
@@ -229,23 +232,29 @@ $(document).ready(function () {
   });
   $(".register-mail").click(function (e) {
     e.preventDefault();
-    const email = $("#inputEmailFooter").val();
-    const regexEmail =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (!regexEmail.test(email)) {
+    const emailfooter = $("#inputEmailFooter").val();
+    const checkEmail =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      console.log(emailfooter);
+    if(emailfooter == ""){
+      addAlert("Vui lòng nhập email !", 2000, "error")
+    } else if (!checkEmail.test(emailfooter)) {
       addAlert("Email không hợp lệ!", 1000, "warning");
     } else {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
     }
   });
-  $('.item__product .product__item a img').click(function(e){
+  $(".item__product .product__item a img").click(function (e) {
     e.preventDefault();
-    $(this).parent('a').parent('.product__item').addClass('flip');
-    $(this).parent('a').siblings('.backgroud__behind').addClass('show_background');
-  })
-  $('.backgroud__behind').click(function(e){
+    $(this).parent("a").parent(".product__item").addClass("flip");
+    $(this)
+      .parent("a")
+      .siblings(".backgroud__behind")
+      .addClass("show_background");
+  });
+  $(".backgroud__behind").click(function (e) {
     e.preventDefault();
-    $(this).parent('.product__item').removeClass('flip');
-    $(this).removeClass('show_background');
-  })
+    $(this).parent(".product__item").removeClass("flip");
+    $(this).removeClass("show_background");
+  });
 });
