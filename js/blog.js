@@ -21,55 +21,6 @@ $(document).on("click", ".alert-modal .alert", function () {
   $(this).stop(false, true);
 });
 $(document).ready(function () {
-  var topMenu = $(".navbar-nav"),
-    topMenuHeight = topMenu.outerHeight() + 40,
-    // All list items
-    menuItems = topMenu.find(".nav-link"),
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function () {
-      var item = $($(this).attr("href"));
-      if (item.length) {
-        return item;
-      }
-    });
-  menuItems.click(function (e) {
-    var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-    $("html, body").stop().animate(
-      {
-        scrollTop: offsetTop,
-      },
-      300
-    );
-    e.preventDefault();
-  });
-  $(".banner__text a").click(function (e) {
-    var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-    $("html, body").stop().animate(
-      {
-        scrollTop: offsetTop,
-      },
-      300
-    );
-    e.preventDefault();
-  });
-  $(window).scroll(function () {
-    var fromTop = $(this).scrollTop() + topMenuHeight;
-
-    // Get id of current scroll item
-    var cur = scrollItems.map(function () {
-      if ($(this).offset().top < fromTop) return this;
-    });
-    // Get the id of the current element
-    cur = cur[cur.length - 1];
-    var id = cur && cur.length ? cur[0].id : "";
-    // Set/remove active class
-    menuItems
-      .removeClass("active")
-      .filter("[href='#" + id + "']")
-      .addClass("active");
-  });
   $(".navbar-toggler").click(function () {
     $(".overlay").addClass("show-overlay");
   });

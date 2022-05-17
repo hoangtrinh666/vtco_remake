@@ -73,19 +73,6 @@ $(document).ready(function () {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
     }
   });
-  $(".item__product .product__item a img").click(function (e) {
-    e.preventDefault();
-    $(this).parent("a").parent(".product__item").addClass("flip");
-    $(this)
-      .parent("a")
-      .siblings(".backgroud__behind")
-      .addClass("show_background");
-  });
-  $(".backgroud__behind").click(function (e) {
-    e.preventDefault();
-    $(this).parent(".product__item").removeClass("flip");
-    $(this).removeClass("show_background");
-  });
   var topMenu = $(".navbar-nav"),
     topMenuHeight = topMenu.outerHeight() + 40,
     // All list items
@@ -121,22 +108,22 @@ $(document).ready(function () {
   });
 
   // Bind to scroll
-  $(window).scroll(function () {
-    var fromTop = $(this).scrollTop() + topMenuHeight;
+    $(window).scroll(function () {
+      var fromTop = $(this).scrollTop() + topMenuHeight;
 
-    // Get id of current scroll item
-    var cur = scrollItems.map(function () {
-      if ($(this).offset().top < fromTop) return this;
+      // Get id of current scroll item
+      var cur = scrollItems.map(function () {
+        if ($(this).offset().top < fromTop) return this;
+      });
+      // Get the id of the current element
+      cur = cur[cur.length - 1];
+      var id = cur && cur.length ? cur[0].id : "";
+      // Set/remove active class
+      menuItems
+        .removeClass("active")
+        .filter("[href='#" + id + "']")
+        .addClass("active");
     });
-    // Get the id of the current element
-    cur = cur[cur.length - 1];
-    var id = cur && cur.length ? cur[0].id : "";
-    // Set/remove active class
-    menuItems
-      .removeClass("active")
-      .filter("[href='#" + id + "']")
-      .addClass("active");
-  });
   var $owl = $("#service__slide");
 
   $owl.children().each(function (index) {
@@ -149,6 +136,7 @@ $(document).ready(function () {
     items: 3,
     nav: false,
     dots: false,
+    delay: 300,
     autoplay: true,
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
@@ -216,10 +204,10 @@ $(document).ready(function () {
     items: 3,
     nav: false,
     dots: false,
-    //default settings:
-    // autoplay: true,
-    // autoplayTimeout: 2000,
-    // autoplayHoverPause: true,
+    delay: 300,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1,

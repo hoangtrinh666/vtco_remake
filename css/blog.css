@@ -151,11 +151,6 @@ body {
   backdrop-filter: blur(10px);
   margin-bottom: 20px;
 }
-.blog__description .img__default {
-  padding-bottom: 26%;
-  border-radius: 10px;
-  margin-bottom: 40px;
-}
 .blog__title {
   margin-bottom: 40px;
 }
@@ -193,16 +188,19 @@ body {
   background-clip: text;
   margin-right: 10px;
 }
-p.blog__text {
+.blog__detail p {
   color: var(--blue-grey-600);
   font-size: var(--font-size-sub-title);
   font-weight: 400;
   line-height: 140%;
   margin-bottom: 40px;
 }
-p.blog__text:first-child {
-  display: flex;
-  flex-direction: column;
+.blog__detail p img{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .blog__author {
   display: flex;

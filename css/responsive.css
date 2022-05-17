@@ -75,23 +75,6 @@
     font-size: 60px;
     line-height: 80px;
   }
-  .item__product:hover .product__item {
-    transform: unset;
-  }
-  .item__product:hover .product__item .img__default {
-    z-index: 5;
-  }
-  .flip {
-    transform: rotateY(180deg) !important;
-    transition: all 0.5s ease !important;
-  }
-  .show_background {
-    z-index: 10 !important;
-    transition: all 0.1s ease !important;
-  }
-  .item__product:hover .product__item .backgroud__behind {
-    z-index: unset;
-  }
   .logo {
     padding: 0;
   }
@@ -239,6 +222,23 @@
   }
 }
 @media (max-width: 567px) {
+  .blog__title h2{
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .blog__title span{
+    font-size: 16px;
+  }
+  .blog__detail p{
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .blog__author h3,  .blog__author span,.related__post span{
+    font-size: 16px;
+  }
+  .blog__detail p img{
+    height: 200px;
+  }
   .banner__text h1 {
     font-size: 45px;
     line-height: 45px;
