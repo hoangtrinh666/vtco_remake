@@ -70,8 +70,7 @@ $(document).ready(function () {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
     }
   });
-  var lastId,
-    topMenu = $(".navbar-nav"),
+  var topMenu = $(".navbar-nav"),
     topMenuHeight = topMenu.outerHeight() + 30,
     // All list items
     menuItems = topMenu.find("a"),
@@ -82,21 +81,8 @@ $(document).ready(function () {
         return item;
       }
     });
-
-  // Bind click handler to menu items
-  // so we can get a fancy scroll animation
-  menuItems.click(function (e) {
-    var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-    $("html, body").stop().animate(
-      {
-        scrollTop: offsetTop,
-      },
-      300
-    );
-    e.preventDefault();
-  });
-  $(".banner__text a").click(function (e) {
+  $("a").on("click", function (event) {
+    // Make sure this.hash has a value before overriding default behavior
     var href = $(this).attr("href"),
       offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
     $("html, body").stop().animate(
@@ -109,8 +95,7 @@ $(document).ready(function () {
   });
   // Bind to scroll
   $(window).scroll(function () {
-    // Get container scroll position
-    var fromTop = $(this).scrollTop() + topMenuHeight;
+    var fromTop = $(this).scrollTop() + topMenuHeight + 1;
 
     // Get id of current scroll item
     var cur = scrollItems.map(function () {
@@ -119,15 +104,11 @@ $(document).ready(function () {
     // Get the id of the current element
     cur = cur[cur.length - 1];
     var id = cur && cur.length ? cur[0].id : "";
-
-    if (lastId !== id) {
-      lastId = id;
-      // Set/remove active class
-      menuItems
-        .removeClass("active")
-        .filter("[href='#" + id + "']")
-        .addClass("active");
-    }
+    // Set/remove active class
+    menuItems
+      .removeClass("active")
+      .filter("[href='#" + id + "']")
+      .addClass("active");
   });
   var $owl = $("#service__slide");
 
