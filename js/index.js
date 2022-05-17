@@ -181,11 +181,11 @@ $(document).ready(function () {
       },
       1400: {
         margin: 100,
-        stagePadding: 200,
+        stagePadding: 230,
       },
       1600: {
         margin: 130,
-        stagePadding: 230,
+        stagePadding: 250,
       },
       1920: {
         margin: 180,
@@ -249,19 +249,19 @@ $(document).ready(function () {
       },
       1200: {
         margin: 80,
-        stagePadding: 150,
-      },
-      1400: {
-        margin: 100,
         stagePadding: 200,
       },
+      1400: {
+        margin: 90,
+        stagePadding: 280,
+      },
       1600: {
-        margin: 130,
-        stagePadding: 230,
+        margin: 120,
+        stagePadding: 300,
       },
       1920: {
-        margin: 200,
-        stagePadding: 300,
+        margin: 150,
+        stagePadding: 380,
       },
     },
   });
