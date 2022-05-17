@@ -724,7 +724,7 @@ body {
 }
 /*contact*/
 #contact .title__default{
-  padding-top: 80px;
+  margin-top: 80px;
 }
 .contact__content {
   position: relative;
