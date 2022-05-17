@@ -81,6 +81,7 @@ $(document).ready(function () {
         return item;
       }
     });
+    console.log(topMenu.outerHeight());
   $("a").on("click", function (event) {
     // Make sure this.hash has a value before overriding default behavior
     var href = $(this).attr("href"),
@@ -91,7 +92,7 @@ $(document).ready(function () {
       },
       300
     );
-    e.preventDefault();
+    event.preventDefault();
   });
   // Bind to scroll
   $(window).scroll(function () {
