@@ -35,7 +35,6 @@ $(document).ready(function () {
     const des = $("#textareaDes").val();
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const regexPhone = /((09|03|07|08|05|19)+([0-9]{8})\b)/g;
-    console.log(email);
     if (
       name == "" &&
       !regexEmail.test(email) &&
@@ -63,8 +62,6 @@ $(document).ready(function () {
     e.preventDefault();
     const emailfooter = $("#inputEmailFooter").val();
     const checkEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    console.log(emailfooter);
     if (emailfooter == "") {
       addAlert("Vui lòng nhập email !", 2000, "error");
     } else if (!checkEmail.test(emailfooter)) {
@@ -73,10 +70,11 @@ $(document).ready(function () {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
     }
   });
-  var topMenu = $(".navbar-nav"),
-    topMenuHeight = topMenu.outerHeight() + 40,
+  var lastId,
+    topMenu = $(".navbar-nav"),
+    topMenuHeight = topMenu.outerHeight() + 30,
     // All list items
-    menuItems = topMenu.find(".nav-link"),
+    menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
     scrollItems = menuItems.map(function () {
       var item = $($(this).attr("href"));
@@ -84,6 +82,9 @@ $(document).ready(function () {
         return item;
       }
     });
+
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
   menuItems.click(function (e) {
     var href = $(this).attr("href"),
       offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
@@ -106,24 +107,28 @@ $(document).ready(function () {
     );
     e.preventDefault();
   });
-
   // Bind to scroll
-    $(window).scroll(function () {
-      var fromTop = $(this).scrollTop() + topMenuHeight;
+  $(window).scroll(function () {
+    // Get container scroll position
+    var fromTop = $(this).scrollTop() + topMenuHeight;
 
-      // Get id of current scroll item
-      var cur = scrollItems.map(function () {
-        if ($(this).offset().top < fromTop) return this;
-      });
-      // Get the id of the current element
-      cur = cur[cur.length - 1];
-      var id = cur && cur.length ? cur[0].id : "";
+    // Get id of current scroll item
+    var cur = scrollItems.map(function () {
+      if ($(this).offset().top < fromTop) return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length - 1];
+    var id = cur && cur.length ? cur[0].id : "";
+
+    if (lastId !== id) {
+      lastId = id;
       // Set/remove active class
       menuItems
         .removeClass("active")
         .filter("[href='#" + id + "']")
         .addClass("active");
-    });
+    }
+  });
   var $owl = $("#service__slide");
 
   $owl.children().each(function (index) {
@@ -136,7 +141,7 @@ $(document).ready(function () {
     items: 3,
     nav: false,
     dots: false,
-    delay: 300,
+    dragEndSpeed: 300,
     autoplay: true,
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
@@ -172,7 +177,7 @@ $(document).ready(function () {
       },
       1200: {
         margin: 80,
-        stagePadding: 150,
+        stagePadding: 200,
       },
       1400: {
         margin: 100,
@@ -184,13 +189,12 @@ $(document).ready(function () {
       },
       1920: {
         margin: 180,
-        stagePadding: 300,
+        stagePadding: 350,
       },
     },
   });
   $(document).on("click", ".owl-item>.click__item", function () {
-    var $speed = 300; // in ms
-    $owl.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
+    $owl.trigger("to.owl.carousel", [$(this).data("position"), 250]);
   });
   var $owl2 = $("#team__slide");
 
@@ -204,7 +208,7 @@ $(document).ready(function () {
     items: 3,
     nav: false,
     dots: false,
-    delay: 300,
+    dragEndSpeed: 300,
     autoplay: true,
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
@@ -262,10 +266,7 @@ $(document).ready(function () {
     },
   });
 
-  $(document).on("click", ".owl-item>.team__item", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    var $speed = 300; // in ms
-    $owl2.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
+  $(document).on("click", ".owl-item>.team__item", function () {
+    $owl2.trigger("to.owl.carousel", [$(this).data("position"), 250]);
   });
 });

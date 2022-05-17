@@ -20,6 +20,7 @@ function addAlert(msg, delay, feel) {
 $(document).on("click", ".alert-modal .alert", function () {
   $(this).stop(false, true);
 });
+
 $(document).ready(function () {
   $(".navbar-toggler").click(function () {
     $(".overlay").addClass("show-overlay");
