@@ -21,27 +21,6 @@ $(document).on("click", ".alert-modal .alert", function () {
   $(this).stop(false, true);
 });
 $(document).ready(function () {
-  var lastId,
-    topMenu = $(".navbar-nav"),
-    topMenuHeight = topMenu.outerHeight()+40,
-    // All list items
-    menuItems = topMenu.find(".nav-link"),
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function(){
-      var item = $($(this).attr("href"));
-      if (item.length) { return item; }
-    });
-
-  // Bind click handler to menu items
-  // so we can get a fancy scroll animation
-  menuItems.click(function(e){
-    var href = $(this).attr("href"),
-        offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-    $('html, body').stop().animate({ 
-        scrollTop: offsetTop
-    }, 300);
-    e.preventDefault();
-  });
   $(".navbar-toggler").click(function () {
     $(".overlay").addClass("show-overlay");
   });
@@ -49,27 +28,114 @@ $(document).ready(function () {
     $(".overlay").removeClass("show-overlay");
     $(".menu__mb").removeClass("show");
   });
+  $(".submit").click(function () {
+    const name = $("#inputName").val();
+    const phone = $("#inputPhone").val();
+    const email = $("#inputEmail").val();
+    const des = $("#textareaDes").val();
+    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regexPhone = /((09|03|07|08|05|19)+([0-9]{8})\b)/g;
+    console.log(email);
+    if (
+      name == "" &&
+      !regexEmail.test(email) &&
+      !regexPhone.test(phone) &&
+      des == ""
+    ) {
+      addAlert("Vui lòng nhập đầy đủ thông tin", 2000, "error");
+    } else if (name == "") {
+      addAlert("Vui lòng nhập tên", 1000, "warning");
+    } else if (!regexPhone.test(phone)) {
+      addAlert("Số điện thoại không hợp lệ!", 1000, "warning");
+    } else if (!regexEmail.test(email)) {
+      addAlert("Email không hợp lệ!", 1000, "warning");
+    } else if (des == "") {
+      addAlert("Vui lòng nhập nội dung", 1000, "warning");
+    } else {
+      addAlert(
+        "Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất có thể!",
+        2000,
+        "success"
+      );
+    }
+  });
+  $(".register-mail").click(function (e) {
+    e.preventDefault();
+    const emailfooter = $("#inputEmailFooter").val();
+    const checkEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    console.log(emailfooter);
+    if (emailfooter == "") {
+      addAlert("Vui lòng nhập email !", 2000, "error");
+    } else if (!checkEmail.test(emailfooter)) {
+      addAlert("Email không hợp lệ!", 1000, "warning");
+    } else {
+      addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
+    }
+  });
+  $(".item__product .product__item a img").click(function (e) {
+    e.preventDefault();
+    $(this).parent("a").parent(".product__item").addClass("flip");
+    $(this)
+      .parent("a")
+      .siblings(".backgroud__behind")
+      .addClass("show_background");
+  });
+  $(".backgroud__behind").click(function (e) {
+    e.preventDefault();
+    $(this).parent(".product__item").removeClass("flip");
+    $(this).removeClass("show_background");
+  });
+  var topMenu = $(".navbar-nav"),
+    topMenuHeight = topMenu.outerHeight() + 40,
+    // All list items
+    menuItems = topMenu.find(".nav-link"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function () {
+      var item = $($(this).attr("href"));
+      if (item.length) {
+        return item;
+      }
+    });
+  menuItems.click(function (e) {
+    var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+    $("html, body").stop().animate(
+      {
+        scrollTop: offsetTop,
+      },
+      300
+    );
+    e.preventDefault();
+  });
+  $(".banner__text a").click(function (e) {
+    var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+    $("html, body").stop().animate(
+      {
+        scrollTop: offsetTop,
+      },
+      300
+    );
+    e.preventDefault();
+  });
+
   // Bind to scroll
   $(window).scroll(function () {
-       // Get container scroll position
-   var fromTop = $(this).scrollTop()+topMenuHeight;
-   
-   // Get id of current scroll item
-   var cur = scrollItems.map(function(){
-     if ($(this).offset().top < fromTop)
-       return this;
-   });
-   // Get the id of the current element
-   cur = cur[cur.length-1];
-   var id = cur && cur.length ? cur[0].id : "";
-   
-   if (lastId !== id) {
-       lastId = id;
-       // Set/remove active class
-       menuItems
-         .parent().removeClass("active")
-         .end().filter("[href='#"+id+"']").parent().addClass("active");
-   }  
+    var fromTop = $(this).scrollTop() + topMenuHeight;
+
+    // Get id of current scroll item
+    var cur = scrollItems.map(function () {
+      if ($(this).offset().top < fromTop) return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length - 1];
+    var id = cur && cur.length ? cur[0].id : "";
+    // Set/remove active class
+    menuItems
+      .removeClass("active")
+      .filter("[href='#" + id + "']")
+      .addClass("active");
   });
   var $owl = $("#service__slide");
 
@@ -112,7 +178,7 @@ $(document).ready(function () {
         margin: 200,
         stagePadding: 300,
       },
-      1024:{
+      1024: {
         margin: 100,
         stagePadding: 0,
       },
@@ -175,17 +241,17 @@ $(document).ready(function () {
         margin: 100,
         stagePadding: 200,
       },
-      800:{
+      800: {
         items: 1,
         margin: 130,
-        stagePadding: 250
+        stagePadding: 250,
       },
       900: {
         items: 1,
         margin: 200,
         stagePadding: 300,
       },
-      1024:{
+      1024: {
         margin: 100,
         stagePadding: 0,
       },
@@ -213,63 +279,5 @@ $(document).ready(function () {
     e.stopPropagation();
     var $speed = 300; // in ms
     $owl2.trigger("to.owl.carousel", [$(this).data("position"), $speed]);
-  });
-  $(".submit").click(function () {
-    const name = $("#inputName").val();
-    const phone = $("#inputPhone").val();
-    const email = $("#inputEmail").val();
-    const des = $("#textareaDes").val();
-    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const regexPhone = /((09|03|07|08|05|19)+([0-9]{8})\b)/g;
-    console.log(email)
-    if (
-      name == "" &&
-      !regexEmail.test(email) &&
-      !regexPhone.test(phone) &&
-      des == ""
-    ) {
-      addAlert("Vui lòng nhập đầy đủ thông tin", 2000, "error");
-    } else if (name == "") {
-      addAlert("Vui lòng nhập tên", 1000, "warning");
-    } else if (!regexPhone.test(phone)) {
-      addAlert("Số điện thoại không hợp lệ!", 1000, "warning");
-    } else if (!regexEmail.test(email)) {
-      addAlert("Email không hợp lệ!", 1000, "warning");
-    } else if (des == "") {
-      addAlert("Vui lòng nhập nội dung", 1000, "warning");
-    } else {
-      addAlert(
-        "Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất có thể!",
-        2000,
-        "success"
-      );
-    }
-  });
-  $(".register-mail").click(function (e) {
-    e.preventDefault();
-    const emailfooter = $("#inputEmailFooter").val();
-    const checkEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-      console.log(emailfooter);
-    if(emailfooter == ""){
-      addAlert("Vui lòng nhập email !", 2000, "error")
-    } else if (!checkEmail.test(emailfooter)) {
-      addAlert("Email không hợp lệ!", 1000, "warning");
-    } else {
-      addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
-    }
-  });
-  $(".item__product .product__item a img").click(function (e) {
-    e.preventDefault();
-    $(this).parent("a").parent(".product__item").addClass("flip");
-    $(this)
-      .parent("a")
-      .siblings(".backgroud__behind")
-      .addClass("show_background");
-  });
-  $(".backgroud__behind").click(function (e) {
-    e.preventDefault();
-    $(this).parent(".product__item").removeClass("flip");
-    $(this).removeClass("show_background");
   });
 });
