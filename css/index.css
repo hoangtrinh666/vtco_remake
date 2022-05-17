@@ -376,8 +376,7 @@ body {
   padding: 40px 0;
 }
 /*Project*/
-.project,
-.contact {
+.project{
   padding-top: 70px;
   padding-bottom: 85px;
   position: relative;
@@ -724,9 +723,13 @@ body {
   height: 100%;
 }
 /*contact*/
+#contact .title__default{
+  padding-top: 80px;
+}
 .contact__content {
   position: relative;
   padding-top: 70px;
+  padding-bottom: 80px;
 }
 .background__map {
   position: absolute;
