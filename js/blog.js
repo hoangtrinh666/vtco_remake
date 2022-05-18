@@ -41,6 +41,7 @@ $(document).ready(function () {
       addAlert("Email không hợp lệ!", 1000, "warning");
     } else {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
+      $("#inputEmailFooter").val("");
     }
   });
 });

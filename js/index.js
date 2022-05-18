@@ -4,7 +4,7 @@ function addAlert(msg, delay, feel) {
       feel +
       '"><i class="icon-nofication fas fa-bell feel"></i><span>' +
       msg +
-      '</span><i class="fas fa-times icon-delete"></i></div></div>'
+      '</span></div></div>'
   );
   $(".non-animate").animate({ left: "0" });
   $(".non-animate")
@@ -124,8 +124,11 @@ $(document).ready(function () {
       addAlert(
         "Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất có thể!",
         2000,
-        "success"
-      );
+        "success");
+      $("#inputName").val("");
+      $("#inputPhone").val("");
+      $("#inputEmail").val("");
+      $("#textareaDes").val("");
     }
   });
   $(".register-mail").click(function (e) {
@@ -138,6 +141,7 @@ $(document).ready(function () {
       addAlert("Email không hợp lệ!", 1000, "warning");
     } else {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
+      $("#inputEmailFooter").val("");
     }
   });
   //   var topMenu = $(".navbar-nav"),
