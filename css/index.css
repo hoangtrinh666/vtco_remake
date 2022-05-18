@@ -276,6 +276,7 @@ body {
 .service__content,
 .team__content {
   padding: 80px 0 43px 0;
+  min-height: 600px;
 }
 
 .service__img {
@@ -376,7 +377,7 @@ body {
   padding: 40px 0;
 }
 /*Project*/
-.project{
+.project, #contact{
   padding-top: 70px;
   padding-bottom: 85px;
   position: relative;
@@ -723,13 +724,9 @@ body {
   height: 100%;
 }
 /*contact*/
-#contact .title__default{
-  margin-top: 80px;
-}
 .contact__content {
   position: relative;
   padding-top: 70px;
-  margin-bottom: 80px;
 }
 .background__map {
   position: absolute;
@@ -762,7 +759,7 @@ body {
   width: 100%;
 }
 /*liên hệ*/
-.contact::before {
+#contact::before {
   content: "";
   position: absolute;
   width: 715px;
@@ -778,7 +775,7 @@ body {
   filter: blur(254px);
   z-index: -1;
 }
-.contact::after {
+#contact::after {
   content: "";
   position: absolute;
   width: 715px;

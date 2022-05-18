@@ -17,6 +17,76 @@ function addAlert(msg, delay, feel) {
     $(".alert-modal .alert").eq(0).remove();
   }
 }
+(function ($, window) {
+  $("[data-toggle]").on("click", function (event) {
+    event.preventDefault();
+    var target = $(this.hash);
+    target.toggle();
+  });
+
+  // Cache selectors
+  var lastId,
+    topMenu = $(".navbar-nav"),
+    topMenuHeight = topMenu.outerHeight() + 30,
+    // All list items
+    menuItems = topMenu.find(".nav-link"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function () {
+      var item = $(this).attr("href");
+      if (item != "#") {
+        return $(item);
+      }
+    });
+
+  console.log(scrollItems);
+
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function (e) {
+    var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+    $("html, body").stop().animate(
+      {
+        scrollTop: offsetTop,
+      },
+      300
+    );
+  });
+  $(".banner__text a").click(function (e) {
+    var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+    $("html, body").stop().animate(
+      {
+        scrollTop: offsetTop,
+      },
+      300
+    );
+  });
+  // Bind to scroll
+  $(window).scroll(function () {
+    // Get container scroll position
+    var fromTop = $(this).scrollTop() + topMenuHeight;
+
+    // Get id of current scroll item
+    var cur = scrollItems.map(function () {
+      if ($(this).offset().top < fromTop)
+        // console.log(this)
+        return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length - 1];
+    var id = cur && cur.length ? cur[0].id : "";
+
+    if (lastId !== id) {
+      lastId = id;
+      // Set/remove active class
+      menuItems
+        .removeClass("active")
+        .filter("[href='#" + id + "']")
+        .addClass("active");
+    }
+  });
+})($, window);
 $(document).on("click", ".alert-modal .alert", function () {
   $(this).stop(false, true);
 });
@@ -70,47 +140,47 @@ $(document).ready(function () {
       addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
     }
   });
-  var topMenu = $(".navbar-nav"),
-    topMenuHeight = topMenu.outerHeight() + 30,
-    // All list items
-    menuItems = topMenu.find("a"),
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function () {
-      var item = $($(this).attr("href"));
-      if (item.length) {
-        return item;
-      }
-    });
-    console.log(topMenu.outerHeight());
-  $("a").on("click", function (event) {
-    // Make sure this.hash has a value before overriding default behavior
-    var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-    $("html, body").stop().animate(
-      {
-        scrollTop: offsetTop,
-      },
-      300
-    );
-    event.preventDefault();
-  });
-  // Bind to scroll
-  $(window).scroll(function () {
-    var fromTop = $(this).scrollTop() + topMenuHeight + 1;
+  //   var topMenu = $(".navbar-nav"),
+  //   topMenuHeight = topMenu.outerHeight()+15,
+  //   menuItems = topMenu.find("a"),
+  //   scrollItems = menuItems.map(function(){
+  //   var item = $($(this).attr("href"));
+  //   if (item.length) { return item; }
+  //   })
+  //   $(".nav-link").on('click', function(event) {
+  //       if (this.hash !== "") {
+  //       event.preventDefault();
+  //       var hash = this.hash;
+  //       $('html, body').animate({
+  //           scrollTop: $(hash).offset().top
+  //       }, 300, function(){
+  //           window.location.hash = hash;
+  //       });
+  //       }
+  //   })
+  //   $(".banner__text a").on('click', function(event) {
+  //     if (this.hash !== "") {
+  //     event.preventDefault();
+  //     var hash = this.hash;
+  //     $('html, body').animate({
+  //         scrollTop: $(hash).offset().top
+  //     }, 300, function(){
+  //         window.location.hash = hash;
+  //     });
+  //     }
+  // })
+  //   $(window).scroll(function(){
+  //       var fromTop = $(this).scrollTop()+topMenuHeight;
+  //       var cur = scrollItems.map(function(){
+  //           if ($(this).offset().top < fromTop)
+  //           return this;
+  //       });
+  //       cur = cur[cur.length-1];
+  //       var id = cur && cur.length ? cur[0].id : "";
+  //       menuItems.removeClass("active")
+  //       .filter("[href='#"+id+"']").addClass("active");
 
-    // Get id of current scroll item
-    var cur = scrollItems.map(function () {
-      if ($(this).offset().top < fromTop) return this;
-    });
-    // Get the id of the current element
-    cur = cur[cur.length - 1];
-    var id = cur && cur.length ? cur[0].id : "";
-    // Set/remove active class
-    menuItems
-      .removeClass("active")
-      .filter("[href='#" + id + "']")
-      .addClass("active");
-  });
+  //   })
   var $owl = $("#service__slide");
 
   $owl.children().each(function (index) {
