@@ -318,6 +318,7 @@ body {
   font-size: var(--font-size-text);
   color: var(--blue-grey-600);
   font-weight: 400;
+  margin-bottom: 30px;
 }
 .service__title a {
   text-decoration: none;
