@@ -4,7 +4,7 @@ function addAlert(msg, delay, feel) {
       feel +
       '"><i class="icon-nofication fas fa-bell feel"></i><span>' +
       msg +
-      '</span><i class="fas fa-times icon-delete"></i></div></div>'
+      '</span></div></div>'
   );
   $(".non-animate").animate({ left: "0" });
   $(".non-animate")
