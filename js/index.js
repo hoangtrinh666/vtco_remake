@@ -105,6 +105,7 @@ $(document).ready(function () {
     const des = $("#textareaDes").val();
     let regexEmail = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
     const regexPhone = /((\+|)84|0[3|5|7|8|9])+([0-9]{8,9})\b/g;
+    const regexName = /[a-zA-Z][a-zA-Z ]{2,}/;
     if (
       name == "" &&
       !regexEmail.test(email) &&
@@ -114,6 +115,8 @@ $(document).ready(function () {
       addAlert("Vui lòng nhập đầy đủ thông tin", 2000, "error");
     } else if (name == "") {
       addAlert("Vui lòng nhập tên", 1000, "warning");
+    } else if(!regexName.test(name)){
+      addAlert("Tên không hợp lệ", 1000, "warning")
     } else if (!regexPhone.test(phone)) {
       addAlert("Số điện thoại không hợp lệ!", 1000, "warning");
     } else if (!regexEmail.test(email)) {
@@ -144,47 +147,6 @@ $(document).ready(function () {
       $("#inputEmailFooter").val("");
     }
   });
-  //   var topMenu = $(".navbar-nav"),
-  //   topMenuHeight = topMenu.outerHeight()+15,
-  //   menuItems = topMenu.find("a"),
-  //   scrollItems = menuItems.map(function(){
-  //   var item = $($(this).attr("href"));
-  //   if (item.length) { return item; }
-  //   })
-  //   $(".nav-link").on('click', function(event) {
-  //       if (this.hash !== "") {
-  //       event.preventDefault();
-  //       var hash = this.hash;
-  //       $('html, body').animate({
-  //           scrollTop: $(hash).offset().top
-  //       }, 300, function(){
-  //           window.location.hash = hash;
-  //       });
-  //       }
-  //   })
-  //   $(".banner__text a").on('click', function(event) {
-  //     if (this.hash !== "") {
-  //     event.preventDefault();
-  //     var hash = this.hash;
-  //     $('html, body').animate({
-  //         scrollTop: $(hash).offset().top
-  //     }, 300, function(){
-  //         window.location.hash = hash;
-  //     });
-  //     }
-  // })
-  //   $(window).scroll(function(){
-  //       var fromTop = $(this).scrollTop()+topMenuHeight;
-  //       var cur = scrollItems.map(function(){
-  //           if ($(this).offset().top < fromTop)
-  //           return this;
-  //       });
-  //       cur = cur[cur.length-1];
-  //       var id = cur && cur.length ? cur[0].id : "";
-  //       menuItems.removeClass("active")
-  //       .filter("[href='#"+id+"']").addClass("active");
-
-  //   })
   var $owl = $("#service__slide");
 
   $owl.children().each(function (index) {
