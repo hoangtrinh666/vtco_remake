@@ -17,9 +17,6 @@
   .container-xxl {
     max-width: 1140px;
   }
-  .banner__partner .container {
-    max-width: 1320px;
-  }
 }
 @media (max-width: 1760px) {
   .container,
@@ -230,6 +227,9 @@
   }
 }
 @media (max-width: 567px) {
+  .blog__description{
+    padding: 20px 10px;
+  }
   .blog__title h2 {
     font-size: 30px;
     line-height: 45px;

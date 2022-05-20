@@ -104,7 +104,7 @@ $(document).ready(function () {
     const email = $("#inputEmail").val();
     const des = $("#textareaDes").val();
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const regexPhone = /((\+|)84|0[3|5|7|8|9])+([0-9]{8,9})\b/g;
+    const regexPhone = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
     const regexName = /[a-zA-Z]{1,}/;
     if (
       name == "" &&
@@ -114,17 +114,21 @@ $(document).ready(function () {
     ) {
       addAlert("Vui lòng nhập đầy đủ thông tin", 2000, "error");
     } else if (name == "") {
-      addAlert("Vui lòng nhập tên", 1000, "warning");
+      addAlert("Vui lòng nhập tên!", 1000, "warning");
     } else if(!regexName.test(name)){
-      addAlert("Tên không hợp lệ", 1000, "warning");
+      addAlert("Tên không hợp lệ!", 1000, "warning");
+    } else if (phone == "") {
+      addAlert("Vui lòng nhập số điện thoại!", 1000, "warning");
     } else if (!regexPhone.test(phone)) {
       addAlert("Số điện thoại không hợp lệ!", 1000, "warning");
+    } else if (email == "") {
+      addAlert("Vui lòng nhập email!", 1000, "warning");
     } else if (!regexEmail.test(email)) {
       addAlert("Email không hợp lệ!", 1000, "warning");
     } else if (des == "") {
-      addAlert("Vui lòng nhập nội dung", 1000, "warning");
+      addAlert("Vui lòng nhập nội dung!", 1000, "warning");
     } else if (!regexName.test(des)) {
-      addAlert("Nội dung không hợp lệ", 1000, "warning");
+      addAlert("Nội dung không hợp lệ!", 1000, "warning");
     } else {
       addAlert(
         "Cảm ơn bạn đã liên hệ, chúng tôi sẽ phản hồi sớm nhất có thể!",

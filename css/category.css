@@ -252,6 +252,27 @@ body {
   font-size: var(--font-size-sub-title);
   color: var(--blue-grey-600);
 }
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.page-link{
+  border: 2px solid var(--white);
+  background: linear-gradient( 328.4deg, #ffffff 0.03%, rgba(255, 255, 255, 0) 100% );
+  color: var(--primary);
+  font-weight: 400;
+  font-size: 16px;
+  padding: 8px 15px;
+}
+.page-link:focus{
+  box-shadow: unset;
+}
+.page-item.active .page-link,.page-link:hover{
+  color: var(--theme-primary);
+  border-color:  var(--theme-primary);
+  background: linear-gradient( 328.4deg, #ffffff 0.03%, rgba(255, 253, 253, 0) 100% );
+}
 /*footer*/
 .footer {
   background: rgba(255, 255, 255, 0.7);

@@ -44,4 +44,9 @@ $(document).ready(function () {
       $("#inputEmailFooter").val("");
     }
   });
+  $(".page-link").click(function(e) {
+    e.preventDefault();
+    $(this).parent(".page-item").addClass("active");
+    $(this).parent(".page-item").siblings().removeClass("active");
+  })
 });
