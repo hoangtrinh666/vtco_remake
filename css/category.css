@@ -267,6 +267,7 @@ body {
 }
 .page-link:focus{
   box-shadow: unset;
+  outline: 2px solid black;
 }
 .page-item.active .page-link,.page-link:hover{
   color: var(--theme-primary);
