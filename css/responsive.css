@@ -1,4 +1,13 @@
-@media (min-width: 1920px) {
+@media (min-width: 3500px) {
+  #team__slide .owl-item:nth-child(4n + 4) div .item__team,
+  #team__slide .owl-item:nth-child(4n + 2) div .item__team,
+  #team__slide .owl-item:nth-child(4n + 1) div .item__team,
+  #team__slide .owl-item:nth-child(4n + 3) div .item__team   {
+    width: 60%;
+    margin: auto;
+  }
+}
+@media (max-width: 1920px) {
   .container,
   .container-fluid,
   .container-lg,
@@ -56,12 +65,11 @@
   .project::after {
     display: none;
   }
-  .title__default p{
-      width: 60%;
+  .title__default p {
+    width: 60%;
   }
 }
 @media (max-width: 1024px) {
-
   .container,
   .container-fluid,
   .container-lg,
@@ -222,21 +230,23 @@
   }
 }
 @media (max-width: 567px) {
-  .blog__title h2{
+  .blog__title h2 {
     font-size: 30px;
     line-height: 45px;
   }
-  .blog__title span{
+  .blog__title span {
     font-size: 16px;
   }
-  .blog__detail p{
+  .blog__detail p {
     font-size: 16px;
     margin-bottom: 20px;
   }
-  .blog__author h3,  .blog__author span,.related__post span{
+  .blog__author h3,
+  .blog__author span,
+  .related__post span {
     font-size: 16px;
   }
-  .blog__detail p img{
+  .blog__detail p img {
     height: 200px;
   }
   .banner__text h1 {

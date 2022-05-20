@@ -661,8 +661,8 @@ body {
   opacity: 1;
 }
 #team__slide .owl-item:nth-child(4n + 4) div .item__team .team__img .img__default {
-  border-radius: 98px 50px 29.5px 29.5px !important;
-  width: calc(100% +20px);
+  border-radius: 28% 10% 8% 8% !important;
+  width: calc(100% + 20px);
 }
 .team__img {
   position: relative;
@@ -675,35 +675,35 @@ body {
 #team__slide .owl-item:nth-child(4n + 4) div .item__team  .team__img::before,
 #team__slide .owl-item:nth-child(4n + 2) div .item__team  .team__img::before {
   content: "";
-  border-radius: 98px 50px 29.5px 29.5px;
+  border-radius: 28% 10% 8% 8%;
   position: absolute;
   background: linear-gradient(
     180deg,
     rgba(78, 146, 249, 0) 0%,
     rgba(0, 102, 255, 0.4) 100%
   );
-  right: -20px;
+  right: -40px;
   bottom: -20px;
   width: 100%;
   height: 100%;
 }
 #team__slide .owl-item:nth-child(4n + 3) div .item__team  .team__img .img__default {
-  border-radius: 50px 98px 29.5px 29.5px !important;
-  width: calc(100% +20px);
+  border-radius: 10% 28%  8% 8% !important;
+  width: calc(100% + 20px);
 }
 #team__slide .owl-item:nth-child(4n + 3) div .item__team .team__img::before {
-  border-radius: 50px 98px 29.5px 29.5px !important;
+  border-radius: 10% 28% 8% 8% !important;
 }
 #team__slide .owl-item:nth-child(4n + 2) div .item__team .img__default {
-  border-radius: 50px 29.5px 29.5px 98px !important;
-  width: calc(100% +20px);
+  border-radius: 10% 8% 8% 28% !important;
+  width: calc(100% + 20px);
 }
 #team__slide .owl-item:nth-child(4n + 2) div .item__team .team__img::before {
-  border-radius: 50px 29.5px 29.5px 98px !important;
+  border-radius: 10% 8% 8% 28% !important;
 }
 #team__slide .owl-item:nth-child(4n + 1) div .item__team .img__default {
-  border-radius: 50px 29.5px 98px 29.5px !important;
-  width: calc(100% +20px);
+  border-radius: 10% 8% 28% 8% !important;
+  width: calc(100% + 20px);
 }
 #team__slide .owl-item:nth-child(4n + 1) div .item__team,
 #team__slide .owl-item:nth-child(4n + 3) div .item__team {
@@ -712,7 +712,7 @@ body {
 #team__slide .owl-item:nth-child(4n + 1) div .item__team .team__img::before,
 #team__slide .owl-item:nth-child(4n + 3) div .item__team .team__img::before {
   content: "";
-  border-radius: 50px 29.5px 98px 29.5px;
+  border-radius: 10% 8% 28% 8% ;
   position: absolute;
   background: linear-gradient(
     180deg,
