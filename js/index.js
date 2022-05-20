@@ -106,7 +106,6 @@ $(document).ready(function () {
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const regexPhone = /((\+|)84|0[3|5|7|8|9])+([0-9]{8,9})\b/g;
     const regexName = /[a-zA-Z]{1,}/;
-    const regexDes = /[a-zA-Z][a-zA-Z][a-zA-Z]{3,}/;
     if (
       name == "" &&
       !regexEmail.test(email) &&
@@ -124,7 +123,7 @@ $(document).ready(function () {
       addAlert("Email không hợp lệ!", 1000, "warning");
     } else if (des == "") {
       addAlert("Vui lòng nhập nội dung", 1000, "warning");
-    } else if (!regexDes.test(des)) {
+    } else if (!regexName.test(des)) {
       addAlert("Nội dung không hợp lệ", 1000, "warning");
     } else {
       addAlert(
