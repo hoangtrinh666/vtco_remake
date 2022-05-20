@@ -29,21 +29,6 @@ $(document).ready(function () {
     $(".overlay").removeClass("show-overlay");
     $(".menu__mb").removeClass("show");
   });
-  $(".register-mail").click(function (e) {
-    e.preventDefault();
-    const emailfooter = $("#inputEmailFooter").val();
-    const checkEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    console.log(emailfooter);
-    if (emailfooter == "") {
-      addAlert("Vui lòng nhập email !", 2000, "error");
-    } else if (!checkEmail.test(emailfooter)) {
-      addAlert("Email không hợp lệ!", 1000, "warning");
-    } else {
-      addAlert("Cảm ơn bạn đã quan tâm tới VTCode! ", 2000, "success");
-      $("#inputEmailFooter").val("");
-    }
-  });
   $(".page-link").click(function(e) {
     e.preventDefault();
     $(this).parent(".page-item").addClass("active");

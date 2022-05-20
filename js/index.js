@@ -103,7 +103,7 @@ $(document).ready(function () {
     const phone = $("#inputPhone").val();
     const email = $("#inputEmail").val();
     const des = $("#textareaDes").val();
-    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let regexEmail = /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
     const regexPhone = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
     const regexName = /[a-zA-Z]{1,}/;
     if (
